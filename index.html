@@ -216,15 +216,14 @@ header.scrolled {
 
 
 .svg-container {
-  background: #000;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 800px;
-  height: 800px;
-  transform: translate(-50%, -50%);
-  /* you can also put your transform here if you want */
+  inset: 0;        /* fill frame */
+  width: 100%;
+  height: 100%;
+  background: #000;
+  transform: none; /* no offset needed */
 }
+
 
 .animation-svg {
     position: absolute;
@@ -289,17 +288,20 @@ header.scrolled {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* centers both horizontally and vertically */
+  transform: translate(-50%, -50%);
+  
   width: 0;
   height: 0;
-  border-left: 60px solid white;
-  border-top: 35px solid transparent;
-  border-bottom: 35px solid transparent;
+
+  /* Scales between 20px (min) and 40px (max), responsive in between */
+  border-left: clamp(20px, 6vw, 60px) solid white;
+  border-top: clamp(12px, 3.5vw, 36px) solid transparent;
+  border-bottom: clamp(12px, 3.5vw, 36px) solid transparent;
+
   cursor: pointer;
   transition: transform 0.2s ease, opacity 0.3s ease;
   z-index: 10;
 }
-
 .play-button:hover {
   transform: translate(-50%, -50%) scale(1.1);
 }
@@ -622,32 +624,59 @@ header.scrolled {
 }
 
 /* hover effect */
-.pause-btn:hover {
-    transform: translate(-50%, -50%) scale(1.15);
-    background: rgba(255, 255, 255, 0.18);
+.pause-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* size: min 40px, ideal 12vw, max 60px */
+    width: clamp(40px, 12vw, 60px);
+    height: clamp(40px, 12vw, 60px);
+
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(6px);
+
+    display: none;
+    cursor: pointer;
+    z-index: 2000;
 }
+
+
+
 
 /* Icon container */
 .pause-icon {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 20px;
-    height: 28px;
     transform: translate(-50%, -50%);
+
+    /* container width/height scaled */
+    width: clamp(12px, 3.5vw, 22px);
+    height: clamp(18px, 5vw, 28px);
+
     display: flex;
     justify-content: space-between;
 }
 
-/* Two pause bars */
+
 .pause-icon::before,
 .pause-icon::after {
     content: "";
-    width: 7px;
+
+    /* width of each pause bar */
+    width: clamp(3px, 1.2vw, 7px);
+
+    /* height matches container height */
     height: 100%;
+
     background: white;
-    border-radius: 3px;
+    border-radius: 2px;
 }
+
 
 */
 body.is-paused * {
