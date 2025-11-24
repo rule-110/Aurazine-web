@@ -7091,10 +7091,12 @@ const pauseControl = document.getElementById('pauseControl');
 
 // Show pause button when mouse enters animation area
 animationFrame.addEventListener('mouseenter', () => {
-    if (playButton.style.display === "none") { 
+    // Only show the pause button if the play button has already been clicked
+    if (!isPaused && animationStarted) {
         pauseControl.style.display = "block";
     }
 });
+
 
 // Hide pause button when leaving
 animationFrame.addEventListener('mouseleave', () => {
@@ -7104,8 +7106,42 @@ animationFrame.addEventListener('mouseleave', () => {
 });
 
 
+
+
+let inactivityTimer = null;
+
+// Function to hide pause button after inactivity
+function hidePauseAfterDelay() {
+    if (isPaused) return; // Do NOT hide if paused
+    pauseControl.style.display = "none";
+}
+
+
+
+// On mouse leave → hide immediately (if playing)
+animationFrame.addEventListener('mouseleave', () => {
+    if (!isPaused) pauseControl.style.display = "none";
+});
+
+// On mouse move → reset the inactivity timer
+animationFrame.addEventListener('mousemove', () => {
+
+    // 🚫 Do nothing if animation not started → prevents blocking play button
+    if (!animationStarted) return;
+
+    if (isPaused) return; // keep visible while paused
+    
+    pauseControl.style.display = "block";
+
+    clearTimeout(inactivityTimer);
+    inactivityTimer = setTimeout(hidePauseAfterDelay, 1000);
+});
+
+
 let skipMode = false;
 playButton.addEventListener("click", () => {
+    animationStarted = true;        // 🚀 Animation is now started
+    pauseControl.style.display = "block"; 
     playButton.style.display = "none";
     if(pauseBtn) pauseBtn.style.display = "block"; // Show Pause Button
 
