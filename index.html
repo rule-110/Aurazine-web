@@ -574,8 +574,10 @@ header.scrolled {
         }
         /* === Animation frame: behaves like a video box === */
 .animation-frame {
-  width: 800px;
-  height: 800px;
+  width: 90vw;            /* scale to screen width */
+  max-width: 800px;       /* but no larger than desktop size */
+  aspect-ratio: 1 / 1;    /* keeps it perfectly square */
+  
   margin: 0 auto;
   overflow: hidden;
   background: #000;
