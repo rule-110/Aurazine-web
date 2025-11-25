@@ -383,14 +383,15 @@ header.scrolled {
         }
 
         .feature-image::before {
-            content: '';
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, var(--primary-blue) 0%, transparent 70%);
-            opacity: 0.2;
-            animation: float 6s ease-in-out infinite;
-        }
+         content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    /* 🛠️ CHANGE: Remove the background line entirely or change it to a non-blue color */
+    background: transparent; /* Or simply remove the whole background line */
+    opacity: 0; /* Or set opacity to 0 to keep the animation structure */
+    animation: none; /* Stop the animation too */
+}
 
         @keyframes float {
             0%, 100% { transform: translate(0, 0); }
@@ -684,7 +685,8 @@ body.is-paused * {
 }
 
 #frame0 {
-  opacity: 1;
+   opacity: 1;
+
 }
 
         @media (max-width: 968px) {
@@ -3340,7 +3342,390 @@ body.is-paused * {
     <section class="features white-background" id="features">
 
         <div class="feature-item">
-            <div class="feature-image"></div>
+            <div class="feature-image">
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 600 432.24">
+  <!-- decentralized traceability svg  -->
+  <defs>
+    <style>
+      .st8, .st9, .st10, .st11, .st12 {
+        font-family: Courier, Courier;
+      }
+
+      .st8, .st9, .st11 {
+        isolation: isolate;
+      }
+
+      .st8, .st12 {
+        fill: #016bec;
+        font-size: 4px;
+      }
+
+      .st9, .st10 {
+        font-size: 2.4px;
+      }
+
+      .st13 {
+        stroke: #000;
+        stroke-width: 3px;
+      }
+
+      .st13, .st14 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .st13, .st14, .st15 {
+        fill: none;
+      }
+
+      .st11 {
+        font-size: 2.5px;
+      }
+
+      .st14 {
+        stroke: #010101;
+      }
+
+      .st14, .st15 {
+        stroke-width: .8px;
+      }
+
+      .st15 {
+        stroke: #016bec;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <path class="st13" d="M202.54,294.96h204.57c0-10.92.01-21.85.04-32.78,0-1.78.34-3.2,1.01-4.29l-2.4-1.27-45.6-17.49,47.32,18.15.68.61c1.13-1.86,3.23-2.73,6.27-2.73,16.08,0,32.16.02,48.24.01l.5.21h52.05c2.08,0,3.87,1.55,3.69,8.12-.29,10.57-.04,21.15-.07,31.72,0,.86-.04,1.65.15,2.5.19.87.04,1.66,0,2.56-.04.63-.04,1.27-.07,1.9-.03,1.08-.06,2.15-.06,3.23v9.3c0,4.74,0,9.47,0,14.2v.29c0,.94-.05,1.86-.23,2.81-.6,3.06-2.9,5.27-5.94,5.32-4.59.05-9.17.01-13.76.01s-9.18.24-13.75-.07c-2.97-.21-5.9.07-8.85.23l-1.27.32-1.36-.24c-.77,0-1.54,0-2.31-.04-5.99-.33-12.11-1.05-18.08.29h-.77c5.98-1.34,12.84-.61,18.82-.29.77.04,1.54.05,2.31.04l1.36.24v1.36c.1,3,1.06,5.86,1.75,8.74.47,1.96.96,3.87.81,5.9v.91l-.04.8c1.61-.04,3.21,0,4.83.25,2.93.43,5.98.1,8.97.07,1.78-.02,2.94.6,4.01,2.2,1.4,2.09.5,3.73-.03,5.69-1.05,3.87-.93,3.91-4.82,3.91-5.62,0-11.23.08-16.85-.02-2.19-.04-4.37.01-6.55.07l-6.25.13c-1.35,0-2.7-.02-4.06-.09-7.28-.37-14.6-.07-21.9-.1-3.49,0-4.18-.74-4.22-4.21-.09-7.63-.25-7.63,7.59-7.62,2.87,0,5.81.46,8.66-.15l.71-.13c.44-.13.88-.28,1.3-.46h.09c1.31.75,2.73.88,4.21.87,4.77-.04,9.55-.18,14.32.03,3,.13,5.98-.22,8.97-.35l1.01-.09c-.27,0-.55.01-.81.02-2.99.12-5.97.47-8.97.35-4.77-.21-9.55-.07-14.32-.03-.23,0-4.34-.75-4.49-.81l.04-1.17c.07-1.13.22-2.25.46-3.39.81-3.9,2.03-7.74,2.04-11.78l.29-.52c-.6.18-.77-.18-1.13-.32-1.54-.64-3.16-.57-4.77-.56-10.48,0-20.96,0-31.45,0-4.52,0-7.26-2.43-7.28-7.02-.04-11.73-.04-23.44-.04-35.17,0-10.92.01-21.85.04-32.78.01-4.82,2.45-7.02,7.28-7.02,16.23,0,32.45.02,48.68.01l.09-.21c-.1,0,.01,0-.09,0v-67.09c0-20.51,0,8.75,0-12.09v-1.35c2.18-.06,8.37-.21,10.56-.16,5.61.1,11.23.02,16.85.02,3.9,0,3.77-.04,4.82-3.91.53-1.95,1.43-3.59.03-5.69-1.08-1.61-2.23-2.22-4.01-2.2-3,.03-6.05.36-8.97-.07-4.91-.73-9.74.33-14.61.13-4.77-.21-9.55-.07-14.32-.03-1.48.01-2.9-.12-4.21-.85h-.28c-3.46,1.5-7.11.8-10.67.8-7.84-.01-7.67-.01-7.59,7.62.04,3.46.72,4.2,4.22,4.21,7.3.02,14.61-.27,21.9.1,1.55.08,4.26.1,5.81.09l-1.15.05c-1.55.01-3.11,0-4.67-.09-7.28-.37-14.6-.07-21.9-.1-3.49,0-4.18-.74-4.22-4.21-.09-7.63-.25-7.63,7.59-7.62,3.56,0,7.21.7,10.67-.8v-.33c.02-1.42.19-2.81.49-4.23.81-3.9,2.03-7.74,2.04-11.78l.29-.52c-.15.04-.28.05-.38.04l-.24-.04c-.32-.03-.48-.26-.75-.37-1.54-.64-3.16-.57-4.77-.56h-31.45c-4.85,0-7.26-2.16-7.28-7.02-.03-11.06-.04-22.12-.04-33.17l.24.04c0,11.06.01,22.12.04,33.17,0,2.13.47,3.73,1.4,4.88l-48.97,19.07h0l48.79-18.81h.41c1.21,1.29,3.08,1.89,5.63,1.89h31.45c1.61,0,3.23-.07,4.77.56.27.11.43.34.75.37l.38-.04c5.98-1.34,13.65-1.01,19.63-.68.77.04,1.54.05,2.31.04l1.36.24c-.22,3.5.93,6.78,1.72,10.1.47,1.96.96,3.87.81,5.9v.91c.15-2.03-.34-3.95-.81-5.9-.79-3.32-1.94-6.6-1.72-10.1l1.27-1.24c2.95-.15,5.89-.43,8.85-.23,4.57.32,9.17.07,13.75.07s9.17.04,13.76-.01c3.03-.03,5.34-2.25,5.94-5.32.18-.95.23-1.88.23-2.81v-.29c0-4.74,0-9.47,0-14.2v-7.1c0-1.42-.1-2.84,0-4.26.07-1.02.07-2.04.13-3.06.05-.9.2-1.69,0-2.56-.18-.85-.15-1.64-.15-2.5.02-10.58-.13-21.15.07-31.72.11-6.14-3.41-8.25-8.2-8.23-32.1.16-64.2.08-96.31.08-4.82,0-7.26,2.19-7.28,7.02-.04,11.59-.04,23.19-.04,34.77l-4.94-.28h-198.28c-.43,0-.82.11-1.26.11l.2,1.61c0,.52-.07,1.04-.1,1.6-.04.63-.04,1.27-.07,1.9-.03,1.08-.06,2.15-.06,3.23v23.78c0,.94-.05,1.86-.23,2.81-.6,3.06-2.9,5.27-5.94,5.32-4.59.05-9.17.01-13.76.01s-9.18.24-13.75-.07c-2.97-.21-5.9.07-8.85.23l-.35.35h-.91s-1.36-.26-1.36-.26c-.77,0-1.54,0-2.31-.04-5.99-.33-13.66-.66-19.63.68,5.98-1.34,13.65-1.01,19.63-.68.77.04,1.54.05,2.31.04l1.36.24c-.22,3.5.93,6.78,1.72,10.1.47,1.96.96,3.87.81,5.9v.91c.15-2.03-.34-3.95-.81-5.9-.79-3.32-1.94-6.6-1.72-10.1l1.27-1.24c2.95-.15,5.89-.43,8.85-.23,4.57.32,9.17.07,13.75.07s9.17.04,13.76-.01c1.71-.02,3.18-.73,4.26-1.89v.58l50.2,19.74-3.93-1.54-46.28-18.78c.83-.91,1.42-2.08,1.68-3.43.18-.95.23-1.88.23-2.81v-23.78c0-1.08.03-2.15.06-3.23.02-.63.03-1.26.07-1.9.03-.56.1-1.08.1-1.6,0-.32-.02-.63-.1-.96-.18-.85-.15-1.64-.15-2.5.02-10.58-.13-21.15.07-31.72.11-6.14-3.41-8.25-8.2-8.23-32.1.16-64.2.08-96.31.08-4.82,0-7.26,2.19-7.28,7.02-.06,22.65-.06,45.3,0,67.95.01,4.86,2.42,7.02,7.28,7.02h31.45c1.61,0,3.23-.07,4.77.56.36.15.53.49,1.13.32l-.29.52c0,4.04-1.22,7.88-2.04,11.78-.29,1.42-.46,2.8-.49,4.23v.33c-3.46,1.5-7.11.8-10.67.8-7.84-.01-7.67-.01-7.59,7.62.04,3.46.72,4.2,4.22,4.21,7.3.02,14.61-.27,21.9.1,1.55.08,3.12.1,4.67.09l5.63-.18c-1.55.01-8.74.12-10.3.04-7.28-.37-14.6-.07-21.9-.1-3.49,0-4.18-.74-4.22-4.21-.09-7.63-.25-7.63,7.59-7.62,3.56,0,7.21.7,10.67-.8h.28c1.31.74,2.73.87,4.21.85,4.77-.04,9.55-.18,14.32.03,4.88.21,9.71-.85,14.61-.13,2.93.43,5.98.1,8.97.07,1.78-.02,2.94.6,4.01,2.2,1.4,2.09.5,3.73-.03,5.69-1.05,3.87-.93,3.91-4.82,3.91-5.62,0-11.23.08-16.85-.02-2.19-.04-4.37.01-6.55.07l-4.01,2.65v27.78l.27,18.7v31.87c15.87,0,31.75-.02,47.63-.1,1.2,0,2.31.12,3.31.41v.21c-1-.29-2.12-.42-3.31-.41-15.87.08-31.75.1-47.63.1s-32.45-.01-48.68-.01c-4.82,0-7.26,2.19-7.28,7.02-.06,22.65-.06,45.3,0,67.95.01,4.6,2.75,7.02,7.28,7.02h31.45c1.61,0,3.23-.07,4.77.56.36.15.53.49,1.13.32l-.29.52c0,4.04-1.22,7.88-2.04,11.78-.24,1.14-.39,2.25-.46,3.39l-.03,1.17c.15.05,4.26.81,4.49.81,4.77-.04,9.55-.18,14.32.03,3,.13,5.98-.22,8.97-.35.27-.01.55-.02.81-.02l-1.01.09c-2.99.12-5.97.47-8.97.35-4.77-.21-9.55-.07-14.32-.03-1.48.01-2.9-.12-4.21-.85h-.09c-.43.18-.87.33-1.3.46l-.71.13c-2.84.62-5.78.16-8.66.15-7.84-.01-7.67-.01-7.59,7.62.04,3.46.72,4.2,4.22,4.21,7.3.02,14.61-.27,21.9.1,1.36.07,2.71.09,4.06.09l6.25-.13c2.18-.06,4.37-.11,6.55-.07,5.61.1,11.23.02,16.85.02,3.9,0,3.77-.04,4.82-3.91.53-1.95,1.43-3.59.03-5.69-1.08-1.61-2.23-2.22-4.01-2.2-3,.04-6.05.36-8.97-.07-1.61-.24-3.23-.29-4.83-.25l.04-.8v-.91c.15-2.03-.34-3.95-.81-5.9-.69-2.89-1.64-5.75-1.74-8.74v-1.36l-1.36-.24c-.77,0-1.54,0-2.31-.04-5.99-.33-12.84-1.05-18.82.29h.77c5.98-1.34,12.1-.61,18.08-.29.77.04,1.54.05,2.31.04l1.36.24,1.27-.32c2.95-.15,5.89-.43,8.85-.23,4.57.32,9.17.07,13.75.07s9.17.04,13.76-.01c3.03-.04,5.34-2.25,5.94-5.32.18-.95.23-1.88.23-2.81v-23.78c0-1.08.03-2.15.06-3.23.02-.63.03-1.26.07-1.9.05-.9.2-1.69,0-2.56-.18-.85-.15-1.64-.15-2.5.02-10.58-.29-21.16.07-31.72.22-6.62-2.22-6.4-3.69-7.7l2.43-.27,49.11-17.76"/>
+  <path class="st13" d="M305.36,271.49c9.65-.26,19.31-.08,28.96-.06.63,0,1.3,0,1.85-.31.76-.42,1.12-1.3,1.43-2.11.49-1.31.99-2.64,1.1-4.04s-.23-2.89-1.21-3.89c-1.37-1.4-3.55-1.49-5.5-1.5-7.75-.01-15.5-.04-23.25-.05-3.99,0-7.98-.02-11.97,0-2.24,0-4.49.02-6.72.04-4.32.03-8.65.06-12.97.09-.98,0-2.06.06-2.75.75-.52.53-.68,1.31-.79,2.06-.29,2.14-.29,4.32.01,6.45.09.63.23,1.31.68,1.77.58.58,1.5.63,2.32.63,9.65.06,19.29.13,28.94.18-9.3,0-18.59.02-27.89,0-3.49,0-4.18-.74-4.22-4.21-.09-7.63-.25-7.63,7.59-7.62,3.56,0,7.21.7,10.67-.8v-.33c.02-1.42.19-2.81.49-4.23.66-3.2,2.41-6.45,2.35-9.77-.08-4.77-3.7-3.7-7.52-3.67-10.11,0-20.23.14-30.34.2-1.82,0-3.84-.05-5.17-1.3-1.44-1.34-1.55-3.54-1.55-5.49-.12-23-.13-46.01,0-69.01,0-1.31.04-2.69.72-3.8,1.27-2.05,4.11-2.28,6.52-2.28,32.2-.02,64.41-.04,96.61-.07,1.69,0,3.5.03,4.93.94,2.53,1.61,2.81,5.14,2.82,8.15.03,21.35.07,42.7.1,64.04,0,2.01-.03,4.15-1.14,5.83-1.87,2.83-5.84,3.12-9.24,3.11-9.89-.03-19.79-.05-29.68-.08-1.36,0-2.98.14-3.62,1.34-.41.77-.25,1.7-.08,2.56.86,4.27,1.72,8.54,2.59,12.82-.7-4.15-1.4-8.31-2.1-12.46-.18-1.07-.23-2.31-1.02-3.05-1.74-1.61-4.71-1.44-6.89-1.36-4.8.15-9.61.07-14.38.69"/>
+  <text class="st12 protected-text" transform="translate(468.8 263.01)"><tspan x="0" y="0">Issuer ID hash</tspan></text>
+  <text class="st12 protected-text" transform="translate(468.8 279.61)"><tspan x="0" y="0">Recipient ID hash</tspan></text>
+  <text class="st8 protected-text" transform="translate(421.04 263.01)"><tspan x="0" y="0">DNA key</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 267.91)"><tspan x="0" y="0">ATCGAGCGAGTCGATTATCA</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 271.74)"><tspan x="0" y="0">ACGGGTGTGTTGCAGTTTTA</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 275.57)"><tspan x="0" y="0">ATCTCTTGCCAGCATTGTAA</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 279.39)"><tspan x="0" y="0">TAGCCACCAAGAGATTGATG</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 283.22)"><tspan x="0" y="0">ATAGTCATGGGTGCTGAGCT</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 287.04)"><tspan x="0" y="0">CGGACTTTCGGTCAGTCGCA</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 290.87)"><tspan x="0" y="0">ATTCCTCACGAGACTGGTCC</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 294.69)"><tspan x="0" y="0">TGTTGTGCGCATCACTCTCA</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 298.52)"><tspan x="0" y="0">ATGTACAAGCAACCCAAGAA</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 302.35)"><tspan x="0" y="0">GGCTGAGCCTGGACTCAACC</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 306.18)"><tspan x="0" y="0">AGGTTGAAGATCTCCTCTTC</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 310)"><tspan x="0" y="0">TCATGACTGAACTCGCGAGG</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 313.82)"><tspan x="0" y="0">GCCGTGTTGCCGGTTCCTTC</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 317.65)"><tspan x="0" y="0">AGAGGTTAAAGAACAAAGGC</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 321.48)"><tspan x="0" y="0">TTACTGTGCGCAGAGGAACG</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 325.31)"><tspan x="0" y="0">TTGAATCCTCGGTCCCCCTT</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 329.13)"><tspan x="0" y="0">GTCTATCCAGATTAATCCAA</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.76 332.96)"><tspan x="0" y="0">TTCCCTCATTTAGGACCCTA</tspan></text>
+  <text class="st8 protected-text" transform="translate(450.35 263.01)"><tspan x="0" y="0">Coord</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 267.91)"><tspan x="0" y="0">X1 Y1</tspan></text>
+  <text class="st11 protected-text" transform="translate(452.46 271.74)"><tspan x="0" y="0">X2 Y2</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 275.57)"><tspan x="0" y="0">X3 Y3</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 279.39)"><tspan x="0" y="0">X4 Y4</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 283.22)"><tspan x="0" y="0">X5 Y5</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 287.04)"><tspan x="0" y="0">X6 Y6</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 290.87)"><tspan x="0" y="0">X7 Y7</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 294.69)"><tspan x="0" y="0">X8 Y8</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 298.52)"><tspan x="0" y="0">X9 Y9</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 302.35)"><tspan x="0" y="0">X10 Y10</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 306.18)"><tspan x="0" y="0">X11 Y11</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 310)"><tspan x="0" y="0">X12 Y12</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 313.82)"><tspan x="0" y="0">X13 Y13</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 317.65)"><tspan x="0" y="0">X14 Y14</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 321.48)"><tspan x="0" y="0">X15 Y15</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 325.31)"><tspan x="0" y="0">X16 Y16</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 329.13)"><tspan x="0" y="0">X17 Y17</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.46 332.96)"><tspan x="0" y="0">X18 Y18</tspan></text>
+  <text class="st10 protected-text" transform="translate(468.8 268.13)"><tspan x="0" y="0">4e9b3f1a7c2d9f8e5b6a1d3c7f8e2b0f</tspan></text>
+  <text class="st10 protected-text" transform="translate(468.8 271.67)"><tspan x="0" y="0">9a0d1c4f7e3a6b9d0c1e2f4a7b6c8d9e</tspan></text>
+  <text class="st10 protected-text" transform="translate(468.8 285.1)"><tspan x="0" y="0">753224810fbf7ee880c5f84fe6d1fb67</tspan></text>
+  <text class="st10 protected-text" transform="translate(468.8 288.63)"><tspan x="0" y="0">2e1be9e1ff841c1823fc94dec90eb5bc</tspan></text>
+  <text class="st12 protected-text" transform="translate(468.8 297.93)"><tspan x="0" y="0">Items description</tspan></text>
+  <path class="st14" d="M485.61,314.1c-.18-.19-.36-.38-.55-.55l-.17-.14c-.09-.1-.29-.07-.41-.07h-5.6v-5.14c0-.85.17-1.55.68-2.25.53-.71,1.24-1.27,2-1.74,1.25-.77,2.8-1.04,4.26-1.05.22,0,1.09,0,2.11-.01l3.04-.02"/>
+  <path class="st14" d="M490.51,312c.03.05.05.1.08.15l.15.29c.06.13.13.31.24.61-.72.21-1.35.43-1.86,1.01-.48.52-.76,1.21-.76,1.92,0,.35.07.69.18,1v.05c-.23-.23-.45-.46-.68-.68l-.21-.23c-.09-.09-.18-.18-.27-.27l-.14-.15"/>
+  <path class="st14" d="M489.33,309.79l.06.08c.49-.26,1.1-.07,1.36.42.26.49.07,1.1-.42,1.36-.49.26-1.1.07-1.36-.42-.23-.43-.11-.94.25-1.24l.17-.11c-.49.26-.68.86-.42,1.36s.86.68,1.36.42l.18.35"/>
+  <path class="st14" d="M493.85,308.36c-.08,0-.15-.05-.24-.05h-1.5c-.15-.46-.4-.77-.68-.77-.29,0-.53.27-.7.7-.01.03-.02.06-.03.09h-.04c-.68.01-1.39.01-2.11,0l.15.29c.1.19.21.38.31.57l.18.33c.04.09.09.18.13.27"/>
+  <path class="st14" d="M496.51,308.36h-.16c-.13,0,.13,0,0,0h-.4c0,.55-.45,1-1,1s-1-.45-1-1l.02.2c.1.46.5.8.98.8.55,0,1-.45,1-1s-.45-1-1-1-1,.45-1,1h-.1"/>
+  <path class="st14" d="M499.51,316.14c-.36-.01-.72,0-1.08,0h-3.09c-.3-.07-.45-.2-.57-.38l-.04-.1c-.17-1.39-1.37-2.49-2.87-2.62h.01c-.24,0-.43-.2-.43-.44v-9.45c.72,0,5.55,0,6.27.01,1.46,0,3.01.27,4.26,1.05,1.45.9,2.68,2.2,2.68,3.98v7.3h-.13c-1.02-.98-5.04-5.03-6.08-5.98l-.19-.21c-.21-.19-.42-.38-.63-.57-.24-.21-.52-.32-.82-.36h-.27"/>
+  <path class="st14" d="M501.82,316.12h-.21c0,.55-.45,1-1,1s-1-.45-1-1l.02.2c.1.46.5.8.98.8.55,0,1-.45,1-1s-.45-1-1-1-1,.45-1,1h-.1"/>
+  <path class="st14" d="M487.78,324.22c.08.1.16.19.25.29l.05.06.38.43.63.72,3.35,3.74c-.46-.02-.96-.04-1.5-.04h-.39c-1.66.01-2.84.05-4.51,0-1.33-.04-2.63-.18-3.87-.73-1.24-.54-2.37-1.47-3.08-2.67-.36-.61-.38-1.33-.39-2.01,0-.77,0-1.54,0-2.31v-.23c0-.18-.04-.24.03-.41.05-.13.15-.17.27-.23.34-.16.69-.27,1.03-.44.29-.15.55-.4.79-.62.32-.29.63-.6.96-.9s.67-.6.98-.92c.15-.16.3-.34.52-.43.26-.13.55-.14.83-.13.78.01,1.57.01,2.35.01h1.78c.18,0,.32.04.49.1.13.04.18.18.26.28s.18.2.27.29c.2.18.41.34.65.47.49.27,1.06.41,1.62.41,1.31,0,2.44-.74,2.93-1.78.14-.29.23-.61.25-.95.04.32.03.65.03.97v.7c-.01.58-.02,1.17,0,1.75.03,1.08-.13,2.3-1.11,2.94-.68.44-.77,1.08-.74,1.84.03.97.03,1.94.02,2.92v1.46c0,.24-.04.34.14.5.13.11.31.2.47.22.67.1,1.34.04,2.01.03.72,0,1.44,0,2.15-.01,1.52,0,2.93-.23,4.26-1.05.59-.37,1.12-.82,1.58-1.34.33-.38.67-.77.9-1.23s.21-.92.21-1.41v-8.38h-2.8"/>
+  <path class="st14" d="M486.13,322.34l.08.07c.42-.36,1.05-.32,1.41.1s.32,1.05-.1,1.41c-.42.36-1.05.32-1.41-.1-.32-.37-.32-.9-.04-1.27l.14-.15c-.42.36-.46.99-.1,1.41s.99.46,1.41.1l.26.3"/>
+  <path class="st14" d="M478.9,320.41l.04-1.99-.02-4.61c.35.4.65.84.98,1.25l.04.03,2.13,2.49c.45-.19.84-.2,1.03,0,.19.21.15.57-.07.99-.01.03-.03.05-.04.08l.02.04,2.16,2.49h0s.27.32.27.32c.24.27.49.54.71.82"/>
+  <path class="st15" d="M487.25,315.72l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M487.11,315.58c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M490.71,311.6l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M490.57,311.47c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M495.79,309.19l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M495.65,309.06c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M501.45,316.96l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M501.31,316.82c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M487.71,324l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M487.57,323.87c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <text class="st12 protected-text" transform="translate(468.5 69.12)"><tspan x="0" y="0">Issuer ID hash</tspan></text>
+  <text class="st12 protected-text" transform="translate(468.5 85.73)"><tspan x="0" y="0">Recipient ID hash</tspan></text>
+  <text class="st8 protected-text" transform="translate(420.74 69.12)"><tspan x="0" y="0">DNA key</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 74.03)"><tspan x="0" y="0">ATCGAGCGAGTCGATTATCA</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 77.85)"><tspan x="0" y="0">ACGGGTGTGTTGCAGTTTTA</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 81.68)"><tspan x="0" y="0">ATCTCTTGCCAGCATTGTAA</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 85.5)"><tspan x="0" y="0">TAGCCACCAAGAGATTGATG</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 89.34)"><tspan x="0" y="0">ATAGTCATGGGTGCTGAGCT</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 93.16)"><tspan x="0" y="0">CGGACTTTCGGTCAGTCGCA</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 96.99)"><tspan x="0" y="0">ATTCCTCACGAGACTGGTCC</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 100.81)"><tspan x="0" y="0">TGTTGTGCGCATCACTCTCA</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 104.64)"><tspan x="0" y="0">ATGTACAAGCAACCCAAGAA</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 108.46)"><tspan x="0" y="0">GGCTGAGCCTGGACTCAACC</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 112.29)"><tspan x="0" y="0">AGGTTGAAGATCTCCTCTTC</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 116.12)"><tspan x="0" y="0">TCATGACTGAACTCGCGAGG</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 119.94)"><tspan x="0" y="0">GCCGTGTTGCCGGTTCCTTC</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 123.77)"><tspan x="0" y="0">AGAGGTTAAAGAACAAAGGC</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 127.59)"><tspan x="0" y="0">TTACTGTGCGCAGAGGAACG</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 131.42)"><tspan x="0" y="0">TTGAATCCTCGGTCCCCCTT</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 135.25)"><tspan x="0" y="0">GTCTATCCAGATTAATCCAA</tspan></text>
+  <text class="st9 protected-text" transform="translate(414.46 139.07)"><tspan x="0" y="0">TTCCCTCATTTAGGACCCTA</tspan></text>
+  <text class="st8 protected-text" transform="translate(450.04 69.12)"><tspan x="0" y="0">Coord</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 74.03)"><tspan x="0" y="0">X1 Y1</tspan></text>
+  <text class="st11 protected-text" transform="translate(452.16 77.85)"><tspan x="0" y="0">X2 Y2</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 81.68)"><tspan x="0" y="0">X3 Y3</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 85.5)"><tspan x="0" y="0">X4 Y4</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 89.34)"><tspan x="0" y="0">X5 Y5</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 93.16)"><tspan x="0" y="0">X6 Y6</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 96.99)"><tspan x="0" y="0">X7 Y7</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 100.81)"><tspan x="0" y="0">X8 Y8</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 104.64)"><tspan x="0" y="0">X9 Y9</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 108.46)"><tspan x="0" y="0">X10 Y10</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 112.29)"><tspan x="0" y="0">X11 Y11</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 116.12)"><tspan x="0" y="0">X12 Y12</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 119.94)"><tspan x="0" y="0">X13 Y13</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 123.77)"><tspan x="0" y="0">X14 Y14</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 127.59)"><tspan x="0" y="0">X15 Y15</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 131.42)"><tspan x="0" y="0">X16 Y16</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 135.25)"><tspan x="0" y="0">X17 Y17</tspan></text>
+  <text class="st9 protected-text" transform="translate(452.16 139.07)"><tspan x="0" y="0">X18 Y18</tspan></text>
+  <text class="st10 protected-text" transform="translate(468.5 74.25)"><tspan x="0" y="0">4e9b3f1a7c2d9f8e5b6a1d3c7f8e2b0f</tspan></text>
+  <text class="st10 protected-text" transform="translate(468.5 77.79)"><tspan x="0" y="0">9a0d1c4f7e3a6b9d0c1e2f4a7b6c8d9e</tspan></text>
+  <text class="st10 protected-text" transform="translate(468.5 91.21)"><tspan x="0" y="0">753224810fbf7ee880c5f84fe6d1fb67</tspan></text>
+  <text class="st10 protected-text" transform="translate(468.5 94.75)"><tspan x="0" y="0">2e1be9e1ff841c1823fc94dec90eb5bc</tspan></text>
+  <text class="st12 protected-text" transform="translate(468.5 104.05)"><tspan x="0" y="0">Items description</tspan></text>
+  <path class="st14" d="M485.31,120.22c-.18-.19-.36-.38-.55-.55l-.17-.14c-.09-.1-.29-.07-.41-.07h-5.6v-5.14c0-.85.17-1.55.68-2.25.53-.71,1.24-1.27,2-1.74,1.25-.77,2.8-1.04,4.26-1.05.22,0,1.09,0,2.11-.01l3.04-.02"/>
+  <path class="st14" d="M490.21,118.11c.03.05.05.1.08.15l.15.29c.06.13.13.31.24.61-.72.21-1.35.43-1.86,1.01-.48.52-.76,1.21-.76,1.92,0,.35.07.69.18,1v.05c-.23-.23-.45-.46-.68-.68l-.21-.23c-.09-.09-.18-.18-.27-.27l-.14-.15"/>
+  <path class="st14" d="M489.03,115.9l.06.08c.49-.26,1.1-.07,1.36.42.26.49.07,1.1-.42,1.36-.49.26-1.1.07-1.36-.42-.23-.43-.11-.94.25-1.24l.17-.11c-.49.26-.68.86-.42,1.36s.86.68,1.36.42l.18.35"/>
+  <path class="st14" d="M493.55,114.48c-.08,0-.15-.05-.24-.05h-1.5c-.15-.46-.4-.77-.68-.77-.29,0-.53.27-.7.7-.01.03-.02.06-.03.09h-.04c-.68.01-1.39.01-2.11,0l.15.29c.1.19.21.38.31.57l.18.33c.04.09.09.18.13.27"/>
+  <path class="st14" d="M496.21,114.47h-.16c-.13,0,.13,0,0,0h-.4c0,.55-.45,1-1,1s-1-.45-1-1l.02.2c.1.46.5.8.98.8.55,0,1-.45,1-1s-.45-1-1-1-1,.45-1,1h-.1"/>
+  <path class="st14" d="M499.2,122.25c-.36-.01-.72,0-1.08,0h-3.09c-.3-.07-.45-.2-.57-.38l-.04-.1c-.17-1.39-1.37-2.49-2.87-2.62h.01c-.24,0-.43-.2-.43-.44v-9.45c.72,0,5.55,0,6.27.01,1.46,0,3.01.27,4.26,1.05,1.45.9,2.68,2.2,2.68,3.98v7.3h-.13c-1.02-.98-5.04-5.03-6.08-5.98l-.19-.21c-.21-.19-.42-.38-.63-.57-.24-.21-.52-.32-.82-.36h-.27"/>
+  <path class="st14" d="M501.52,122.24h-.21c0,.55-.45,1-1,1s-1-.45-1-1l.02.2c.1.46.5.8.98.8.55,0,1-.45,1-1s-.45-1-1-1-1,.45-1,1h-.1"/>
+  <path class="st14" d="M487.48,130.34c.08.1.16.19.25.29l.05.06.38.43.63.72,3.35,3.74c-.46-.02-.96-.04-1.5-.04h-.39c-1.66.01-2.84.05-4.51,0-1.33-.04-2.63-.18-3.87-.73-1.24-.54-2.37-1.47-3.08-2.67-.36-.61-.38-1.33-.39-2.01,0-.77,0-1.54,0-2.31v-.23c0-.18-.04-.24.03-.41.05-.13.15-.17.27-.23.34-.16.69-.27,1.03-.44.29-.15.55-.4.79-.62.32-.29.63-.6.96-.9s.67-.6.98-.92c.15-.16.3-.34.52-.43.26-.13.55-.14.83-.13.78.01,1.57.01,2.35.01h1.78c.18,0,.32.04.49.1.13.04.18.18.26.28s.18.2.27.29c.2.18.41.34.65.47.49.27,1.06.41,1.62.41,1.31,0,2.44-.74,2.93-1.78.14-.29.23-.61.25-.95.04.32.03.65.03.97v.7c-.01.58-.02,1.17,0,1.75.03,1.08-.13,2.3-1.11,2.94-.68.44-.77,1.08-.74,1.84.03.97.03,1.94.02,2.92v1.46c0,.24-.04.34.14.5.13.11.31.2.47.22.67.1,1.34.04,2.01.03.72,0,1.44,0,2.15-.01,1.52,0,2.93-.23,4.26-1.05.59-.37,1.12-.82,1.58-1.34.33-.38.67-.77.9-1.23s.21-.92.21-1.41v-8.38h-2.8"/>
+  <path class="st14" d="M485.83,128.45l.08.07c.42-.36,1.05-.32,1.41.1s.32,1.05-.1,1.41c-.42.36-1.05.32-1.41-.1-.32-.37-.32-.9-.04-1.27l.14-.15c-.42.36-.46.99-.1,1.41s.99.46,1.41.1l.26.3"/>
+  <path class="st14" d="M478.6,126.53l.04-1.99-.02-4.61c.35.4.65.84.98,1.25l.04.03,2.13,2.49c.45-.19.84-.2,1.03,0,.19.21.15.57-.07.99-.01.03-.03.05-.04.08l.02.04,2.16,2.49h0s.27.32.27.32c.24.27.49.54.71.82"/>
+  <path class="st15" d="M486.95,121.83l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M486.81,121.69c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M490.41,117.71l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M490.27,117.58c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M495.49,115.31l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M495.35,115.17c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M501.15,123.08l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M501.01,122.94c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M487.4,130.12l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M487.26,129.99c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <text class="st12 protected-text" transform="translate(150.63 68.73)"><tspan x="0" y="0">Issuer ID hash</tspan></text>
+  <text class="st12 protected-text" transform="translate(150.63 85.33)"><tspan x="0" y="0">Recipient ID hash</tspan></text>
+  <text class="st8 protected-text" transform="translate(102.87 68.73)"><tspan x="0" y="0">DNA key</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 73.63)"><tspan x="0" y="0">ATCGAGCGAGTCGATTATCA</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 77.46)"><tspan x="0" y="0">ACGGGTGTGTTGCAGTTTTA</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 81.29)"><tspan x="0" y="0">ATCTCTTGCCAGCATTGTAA</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 85.11)"><tspan x="0" y="0">TAGCCACCAAGAGATTGATG</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 88.94)"><tspan x="0" y="0">ATAGTCATGGGTGCTGAGCT</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 92.76)"><tspan x="0" y="0">CGGACTTTCGGTCAGTCGCA</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 96.59)"><tspan x="0" y="0">ATTCCTCACGAGACTGGTCC</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 100.41)"><tspan x="0" y="0">TGTTGTGCGCATCACTCTCA</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 104.25)"><tspan x="0" y="0">ATGTACAAGCAACCCAAGAA</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 108.07)"><tspan x="0" y="0">GGCTGAGCCTGGACTCAACC</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 111.9)"><tspan x="0" y="0">AGGTTGAAGATCTCCTCTTC</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 115.72)"><tspan x="0" y="0">TCATGACTGAACTCGCGAGG</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 119.54)"><tspan x="0" y="0">GCCGTGTTGCCGGTTCCTTC</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 123.37)"><tspan x="0" y="0">AGAGGTTAAAGAACAAAGGC</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 127.2)"><tspan x="0" y="0">TTACTGTGCGCAGAGGAACG</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 131.03)"><tspan x="0" y="0">TTGAATCCTCGGTCCCCCTT</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 134.85)"><tspan x="0" y="0">GTCTATCCAGATTAATCCAA</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.59 138.68)"><tspan x="0" y="0">TTCCCTCATTTAGGACCCTA</tspan></text>
+  <text class="st8 protected-text" transform="translate(132.18 68.73)"><tspan x="0" y="0">Coord</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 73.63)"><tspan x="0" y="0">X1 Y1</tspan></text>
+  <text class="st11 protected-text" transform="translate(134.3 77.46)"><tspan x="0" y="0">X2 Y2</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 81.29)"><tspan x="0" y="0">X3 Y3</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 85.11)"><tspan x="0" y="0">X4 Y4</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 88.94)"><tspan x="0" y="0">X5 Y5</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 92.76)"><tspan x="0" y="0">X6 Y6</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 96.59)"><tspan x="0" y="0">X7 Y7</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 100.41)"><tspan x="0" y="0">X8 Y8</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 104.25)"><tspan x="0" y="0">X9 Y9</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 108.07)"><tspan x="0" y="0">X10 Y10</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 111.9)"><tspan x="0" y="0">X11 Y11</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 115.72)"><tspan x="0" y="0">X12 Y12</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 119.54)"><tspan x="0" y="0">X13 Y13</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 123.37)"><tspan x="0" y="0">X14 Y14</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 127.2)"><tspan x="0" y="0">X15 Y15</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 131.03)"><tspan x="0" y="0">X16 Y16</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 134.85)"><tspan x="0" y="0">X17 Y17</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.3 138.68)"><tspan x="0" y="0">X18 Y18</tspan></text>
+  <text class="st10 protected-text" transform="translate(150.63 73.85)"><tspan x="0" y="0">4e9b3f1a7c2d9f8e5b6a1d3c7f8e2b0f</tspan></text>
+  <text class="st10 protected-text" transform="translate(150.63 77.39)"><tspan x="0" y="0">9a0d1c4f7e3a6b9d0c1e2f4a7b6c8d9e</tspan></text>
+  <text class="st10 protected-text" transform="translate(150.63 90.82)"><tspan x="0" y="0">753224810fbf7ee880c5f84fe6d1fb67</tspan></text>
+  <text class="st10 protected-text" transform="translate(150.63 94.35)"><tspan x="0" y="0">2e1be9e1ff841c1823fc94dec90eb5bc</tspan></text>
+  <text class="st12 protected-text" transform="translate(150.63 103.66)"><tspan x="0" y="0">Items description</tspan></text>
+  <path class="st14" d="M167.45,119.82c-.18-.19-.36-.38-.55-.55l-.17-.14c-.09-.1-.29-.07-.41-.07h-5.6v-5.14c0-.85.17-1.55.68-2.25.53-.71,1.24-1.27,2-1.74,1.25-.77,2.8-1.04,4.26-1.05.22,0,1.09,0,2.11-.01l3.04-.02"/>
+  <path class="st14" d="M172.35,117.72c.03.05.05.1.08.15l.15.29c.06.13.13.31.24.61-.72.21-1.35.43-1.86,1.01-.48.52-.76,1.21-.76,1.92,0,.35.07.69.18,1v.05c-.23-.23-.45-.46-.68-.68l-.21-.23c-.09-.09-.18-.18-.27-.27l-.14-.15"/>
+  <path class="st14" d="M171.17,115.51l.06.08c.49-.26,1.1-.07,1.36.42.26.49.07,1.1-.42,1.36-.49.26-1.1.07-1.36-.42-.23-.43-.11-.94.25-1.24l.17-.11c-.49.26-.68.86-.42,1.36s.86.68,1.36.42l.18.35"/>
+  <path class="st14" d="M175.68,114.09c-.08,0-.15-.05-.24-.05h-1.5c-.15-.46-.4-.77-.68-.77-.29,0-.53.27-.7.7-.01.03-.02.06-.03.09h-.04c-.68.01-1.39.01-2.11,0l.15.29c.1.19.21.38.31.57l.18.33c.04.09.09.18.13.27"/>
+  <path class="st14" d="M178.34,114.08h-.16c-.13,0,.13,0,0,0h-.4c0,.55-.45,1-1,1s-1-.45-1-1l.02.2c.1.46.5.8.98.8.55,0,1-.45,1-1s-.45-1-1-1-1,.45-1,1h-.1"/>
+  <path class="st14" d="M181.34,121.86c-.36-.01-.72,0-1.08,0h-3.09c-.3-.07-.45-.2-.57-.38l-.04-.1c-.17-1.39-1.37-2.49-2.87-2.62h.01c-.24,0-.43-.2-.43-.44v-9.45c.72,0,5.55,0,6.27.01,1.46,0,3.01.27,4.26,1.05,1.45.9,2.68,2.2,2.68,3.98v7.3h-.13c-1.02-.98-5.04-5.03-6.08-5.98l-.19-.21c-.21-.19-.42-.38-.63-.57-.24-.21-.52-.32-.82-.36h-.27"/>
+  <path class="st14" d="M183.65,121.84h-.21c0,.55-.45,1-1,1s-1-.45-1-1l.02.2c.1.46.5.8.98.8.55,0,1-.45,1-1s-.45-1-1-1-1,.45-1,1h-.1"/>
+  <path class="st14" d="M169.61,129.94c.08.1.16.19.25.29l.05.06.38.43.63.72,3.35,3.74c-.46-.02-.96-.04-1.5-.04h-.39c-1.66.01-2.84.05-4.51,0-1.33-.04-2.63-.18-3.87-.73-1.24-.54-2.37-1.47-3.08-2.67-.36-.61-.38-1.33-.39-2.01,0-.77,0-1.54,0-2.31v-.23c0-.18-.04-.24.03-.41.05-.13.15-.17.27-.23.34-.16.69-.27,1.03-.44.29-.15.55-.4.79-.62.32-.29.63-.6.96-.9s.67-.6.98-.92c.15-.16.3-.34.52-.43.26-.13.55-.14.83-.13.78.01,1.57.01,2.35.01h1.78c.18,0,.32.04.49.1.13.04.18.18.26.28s.18.2.27.29c.2.18.41.34.65.47.49.27,1.06.41,1.62.41,1.31,0,2.44-.74,2.93-1.78.14-.29.23-.61.25-.95.04.32.03.65.03.97v.7c-.01.58-.02,1.17,0,1.75.03,1.08-.13,2.3-1.11,2.94-.68.44-.77,1.08-.74,1.84.03.97.03,1.94.02,2.92v1.46c0,.24-.04.34.14.5.13.11.31.2.47.22.67.1,1.34.04,2.01.03.72,0,1.44,0,2.15-.01,1.52,0,2.93-.23,4.26-1.05.59-.37,1.12-.82,1.58-1.34.33-.38.67-.77.9-1.23s.21-.92.21-1.41v-8.38h-2.8"/>
+  <path class="st14" d="M167.96,128.06l.08.07c.42-.36,1.05-.32,1.41.1s.32,1.05-.1,1.41c-.42.36-1.05.32-1.41-.1-.32-.37-.32-.9-.04-1.27l.14-.15c-.42.36-.46.99-.1,1.41s.99.46,1.41.1l.26.3"/>
+  <path class="st14" d="M160.74,126.14l.04-1.99-.02-4.61c.35.4.65.84.98,1.25l.04.03,2.13,2.49c.45-.19.84-.2,1.03,0,.19.21.15.57-.07.99-.01.03-.03.05-.04.08l.02.04,2.16,2.49h0s.27.32.27.32c.24.27.49.54.71.82"/>
+  <path class="st15" d="M169.08,121.44l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M168.94,121.3c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M172.54,117.32l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M172.4,117.19c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M177.63,114.91l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M177.49,114.78c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M183.28,122.68l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M183.14,122.54c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M169.54,129.72l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M169.4,129.59c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <text class="st12 protected-text" transform="translate(310.49 166.58)"><tspan x="0" y="0">Issuer ID hash</tspan></text>
+  <text class="st12 protected-text" transform="translate(310.49 183.18)"><tspan x="0" y="0">Recipient ID hash</tspan></text>
+  <text class="st8 protected-text" transform="translate(262.73 166.58)"><tspan x="0" y="0">DNA key</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 171.48)"><tspan x="0" y="0">ATCGAGCGAGTCGATTATCA</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 175.3)"><tspan x="0" y="0">ACGGGTGTGTTGCAGTTTTA</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 179.13)"><tspan x="0" y="0">ATCTCTTGCCAGCATTGTAA</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 182.96)"><tspan x="0" y="0">TAGCCACCAAGAGATTGATG</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 186.79)"><tspan x="0" y="0">ATAGTCATGGGTGCTGAGCT</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 190.61)"><tspan x="0" y="0">CGGACTTTCGGTCAGTCGCA</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 194.44)"><tspan x="0" y="0">ATTCCTCACGAGACTGGTCC</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 198.26)"><tspan x="0" y="0">TGTTGTGCGCATCACTCTCA</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 202.09)"><tspan x="0" y="0">ATGTACAAGCAACCCAAGAA</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 205.92)"><tspan x="0" y="0">GGCTGAGCCTGGACTCAACC</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 209.75)"><tspan x="0" y="0">AGGTTGAAGATCTCCTCTTC</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 213.57)"><tspan x="0" y="0">TCATGACTGAACTCGCGAGG</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 217.39)"><tspan x="0" y="0">GCCGTGTTGCCGGTTCCTTC</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 221.22)"><tspan x="0" y="0">AGAGGTTAAAGAACAAAGGC</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 225.04)"><tspan x="0" y="0">TTACTGTGCGCAGAGGAACG</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 228.87)"><tspan x="0" y="0">TTGAATCCTCGGTCCCCCTT</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 232.7)"><tspan x="0" y="0">GTCTATCCAGATTAATCCAA</tspan></text>
+  <text class="st9 protected-text" transform="translate(256.45 236.53)"><tspan x="0" y="0">TTCCCTCATTTAGGACCCTA</tspan></text>
+  <text class="st8 protected-text" transform="translate(292.04 166.58)"><tspan x="0" y="0">Coord</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 171.48)"><tspan x="0" y="0">X1 Y1</tspan></text>
+  <text class="st11 protected-text" transform="translate(294.16 175.3)"><tspan x="0" y="0">X2 Y2</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 179.13)"><tspan x="0" y="0">X3 Y3</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 182.96)"><tspan x="0" y="0">X4 Y4</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 186.79)"><tspan x="0" y="0">X5 Y5</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 190.61)"><tspan x="0" y="0">X6 Y6</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 194.44)"><tspan x="0" y="0">X7 Y7</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 198.26)"><tspan x="0" y="0">X8 Y8</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 202.09)"><tspan x="0" y="0">X9 Y9</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 205.92)"><tspan x="0" y="0">X10 Y10</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 209.75)"><tspan x="0" y="0">X11 Y11</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 213.57)"><tspan x="0" y="0">X12 Y12</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 217.39)"><tspan x="0" y="0">X13 Y13</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 221.22)"><tspan x="0" y="0">X14 Y14</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 225.04)"><tspan x="0" y="0">X15 Y15</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 228.87)"><tspan x="0" y="0">X16 Y16</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 232.7)"><tspan x="0" y="0">X17 Y17</tspan></text>
+  <text class="st9 protected-text" transform="translate(294.16 236.53)"><tspan x="0" y="0">X18 Y18</tspan></text>
+  <text class="st10 protected-text" transform="translate(310.49 171.7)"><tspan x="0" y="0">4e9b3f1a7c2d9f8e5b6a1d3c7f8e2b0f</tspan></text>
+  <text class="st10 protected-text" transform="translate(310.49 175.24)"><tspan x="0" y="0">9a0d1c4f7e3a6b9d0c1e2f4a7b6c8d9e</tspan></text>
+  <text class="st10 protected-text" transform="translate(310.49 188.67)"><tspan x="0" y="0">753224810fbf7ee880c5f84fe6d1fb67</tspan></text>
+  <text class="st10 protected-text" transform="translate(310.49 192.2)"><tspan x="0" y="0">2e1be9e1ff841c1823fc94dec90eb5bc</tspan></text>
+  <text class="st12 protected-text" transform="translate(310.49 201.5)"><tspan x="0" y="0">Items description</tspan></text>
+  <path class="st14" d="M327.31,217.67c-.18-.19-.36-.38-.55-.55l-.17-.14c-.09-.1-.29-.07-.41-.07h-5.6v-5.14c0-.85.17-1.55.68-2.25.53-.71,1.24-1.27,2-1.74,1.25-.77,2.8-1.04,4.26-1.05.22,0,1.09,0,2.11-.01l3.04-.02"/>
+  <path class="st14" d="M332.21,215.56c.03.05.05.1.08.15l.15.29c.06.13.13.31.24.61-.72.21-1.35.43-1.86,1.01-.48.52-.76,1.21-.76,1.92,0,.35.07.69.18,1v.05c-.23-.23-.45-.46-.68-.68l-.21-.23c-.09-.09-.18-.18-.27-.27l-.14-.15"/>
+  <path class="st14" d="M331.03,213.35l.06.08c.49-.26,1.1-.07,1.36.42.26.49.07,1.1-.42,1.36-.49.26-1.1.07-1.36-.42-.23-.43-.11-.94.25-1.24l.17-.11c-.49.26-.68.86-.42,1.36s.86.68,1.36.42l.18.35"/>
+  <path class="st14" d="M335.54,211.93c-.08,0-.15-.05-.24-.05h-1.5c-.15-.46-.4-.77-.68-.77-.29,0-.53.27-.7.7-.01.03-.02.06-.03.09h-.04c-.68.01-1.39.01-2.11,0l.15.29c.1.19.21.38.31.57l.18.33c.04.09.09.18.13.27"/>
+  <path class="st14" d="M338.2,211.93h-.16c-.13,0,.13,0,0,0h-.4c0,.55-.45,1-1,1s-1-.45-1-1l.02.2c.1.46.5.8.98.8.55,0,1-.45,1-1s-.45-1-1-1-1,.45-1,1h-.1"/>
+  <path class="st14" d="M341.2,219.7c-.36-.01-.72,0-1.08,0h-3.09c-.3-.07-.45-.2-.57-.38l-.04-.1c-.17-1.39-1.37-2.49-2.87-2.62h.01c-.24,0-.43-.2-.43-.44v-9.45c.72,0,5.55,0,6.27.01,1.46,0,3.01.27,4.26,1.05,1.45.9,2.68,2.2,2.68,3.98v7.3h-.13c-1.02-.98-5.04-5.03-6.08-5.98l-.19-.21c-.21-.19-.42-.38-.63-.57-.24-.21-.52-.32-.82-.36h-.27"/>
+  <path class="st14" d="M343.51,219.69h-.21c0,.55-.45,1-1,1s-1-.45-1-1l.02.2c.1.46.5.8.98.8.55,0,1-.45,1-1s-.45-1-1-1-1,.45-1,1h-.1"/>
+  <path class="st14" d="M329.47,227.79c.08.1.16.19.25.29l.05.06.38.43.63.72,3.35,3.74c-.46-.02-.96-.04-1.5-.04h-.39c-1.66.01-2.84.05-4.51,0-1.33-.04-2.63-.18-3.87-.73-1.24-.54-2.37-1.47-3.08-2.67-.36-.61-.38-1.33-.39-2.01,0-.77,0-1.54,0-2.31v-.23c0-.18-.04-.24.03-.41.05-.13.15-.17.27-.23.34-.16.69-.27,1.03-.44.29-.15.55-.4.79-.62.32-.29.63-.6.96-.9s.67-.6.98-.92c.15-.16.3-.34.52-.43.26-.13.55-.14.83-.13.78.01,1.57.01,2.35.01h1.78c.18,0,.32.04.49.1.13.04.18.18.26.28s.18.2.27.29c.2.18.41.34.65.47.49.27,1.06.41,1.62.41,1.31,0,2.44-.74,2.93-1.78.14-.29.23-.61.25-.95.04.32.03.65.03.97v.7c-.01.58-.02,1.17,0,1.75.03,1.08-.13,2.3-1.11,2.94-.68.44-.77,1.08-.74,1.84.03.97.03,1.94.02,2.92v1.46c0,.24-.04.34.14.5.13.11.31.2.47.22.67.1,1.34.04,2.01.03.72,0,1.44,0,2.15-.01,1.52,0,2.93-.23,4.26-1.05.59-.37,1.12-.82,1.58-1.34.33-.38.67-.77.9-1.23s.21-.92.21-1.41v-8.38h-2.8"/>
+  <path class="st14" d="M327.82,225.91l.08.07c.42-.36,1.05-.32,1.41.1s.32,1.05-.1,1.41c-.42.36-1.05.32-1.41-.1-.32-.37-.32-.9-.04-1.27l.14-.15c-.42.36-.46.99-.1,1.41s.99.46,1.41.1l.26.3"/>
+  <path class="st14" d="M320.6,223.98l.04-1.99-.02-4.61c.35.4.65.84.98,1.25l.04.03,2.13,2.49c.45-.19.84-.2,1.03,0,.19.21.15.57-.07.99-.01.03-.03.05-.04.08l.02.04,2.16,2.49h0s.27.32.27.32c.24.27.49.54.71.82"/>
+  <path class="st15" d="M328.94,219.28l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M328.8,219.14c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M332.4,215.17l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M332.26,215.03c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M337.49,212.76l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M337.35,212.63c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M343.14,220.53l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M343,220.39c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M329.4,227.57l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M329.26,227.44c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <text class="st12 protected-text" transform="translate(150.74 262.94)"><tspan x="0" y="0">Issuer ID hash</tspan></text>
+  <text class="st12 protected-text" transform="translate(150.74 279.55)"><tspan x="0" y="0">Recipient ID hash</tspan></text>
+  <text class="st8 protected-text" transform="translate(102.98 262.94)"><tspan x="0" y="0">DNA key</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 267.85)"><tspan x="0" y="0">ATCGAGCGAGTCGATTATCA</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 271.67)"><tspan x="0" y="0">ACGGGTGTGTTGCAGTTTTA</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 275.5)"><tspan x="0" y="0">ATCTCTTGCCAGCATTGTAA</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 279.32)"><tspan x="0" y="0">TAGCCACCAAGAGATTGATG</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 283.15)"><tspan x="0" y="0">ATAGTCATGGGTGCTGAGCT</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 286.98)"><tspan x="0" y="0">CGGACTTTCGGTCAGTCGCA</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 290.81)"><tspan x="0" y="0">ATTCCTCACGAGACTGGTCC</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 294.63)"><tspan x="0" y="0">TGTTGTGCGCATCACTCTCA</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 298.46)"><tspan x="0" y="0">ATGTACAAGCAACCCAAGAA</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 302.28)"><tspan x="0" y="0">GGCTGAGCCTGGACTCAACC</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 306.11)"><tspan x="0" y="0">AGGTTGAAGATCTCCTCTTC</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 309.94)"><tspan x="0" y="0">TCATGACTGAACTCGCGAGG</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 313.76)"><tspan x="0" y="0">GCCGTGTTGCCGGTTCCTTC</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 317.59)"><tspan x="0" y="0">AGAGGTTAAAGAACAAAGGC</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 321.41)"><tspan x="0" y="0">TTACTGTGCGCAGAGGAACG</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 325.24)"><tspan x="0" y="0">TTGAATCCTCGGTCCCCCTT</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 329.06)"><tspan x="0" y="0">GTCTATCCAGATTAATCCAA</tspan></text>
+  <text class="st9 protected-text" transform="translate(96.7 332.89)"><tspan x="0" y="0">TTCCCTCATTTAGGACCCTA</tspan></text>
+  <text class="st8 protected-text" transform="translate(132.29 262.94)"><tspan x="0" y="0">Coord</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 267.85)"><tspan x="0" y="0">X1 Y1</tspan></text>
+  <text class="st11 protected-text" transform="translate(134.4 271.67)"><tspan x="0" y="0">X2 Y2</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 275.5)"><tspan x="0" y="0">X3 Y3</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 279.32)"><tspan x="0" y="0">X4 Y4</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 283.15)"><tspan x="0" y="0">X5 Y5</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 286.98)"><tspan x="0" y="0">X6 Y6</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 290.81)"><tspan x="0" y="0">X7 Y7</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 294.63)"><tspan x="0" y="0">X8 Y8</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 298.46)"><tspan x="0" y="0">X9 Y9</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 302.28)"><tspan x="0" y="0">X10 Y10</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 306.11)"><tspan x="0" y="0">X11 Y11</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 309.94)"><tspan x="0" y="0">X12 Y12</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 313.76)"><tspan x="0" y="0">X13 Y13</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 317.59)"><tspan x="0" y="0">X14 Y14</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 321.41)"><tspan x="0" y="0">X15 Y15</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 325.24)"><tspan x="0" y="0">X16 Y16</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 329.06)"><tspan x="0" y="0">X17 Y17</tspan></text>
+  <text class="st9 protected-text" transform="translate(134.4 332.89)"><tspan x="0" y="0">X18 Y18</tspan></text>
+  <text class="st10 protected-text" transform="translate(150.74 268.07)"><tspan x="0" y="0">4e9b3f1a7c2d9f8e5b6a1d3c7f8e2b0f</tspan></text>
+  <text class="st10 protected-text" transform="translate(150.74 271.6)"><tspan x="0" y="0">9a0d1c4f7e3a6b9d0c1e2f4a7b6c8d9e</tspan></text>
+  <text class="st10 protected-text" transform="translate(150.74 285.03)"><tspan x="0" y="0">753224810fbf7ee880c5f84fe6d1fb67</tspan></text>
+  <text class="st10 protected-text" transform="translate(150.74 288.57)"><tspan x="0" y="0">2e1be9e1ff841c1823fc94dec90eb5bc</tspan></text>
+  <text class="st12 protected-text" transform="translate(150.74 297.87)"><tspan x="0" y="0">Items description</tspan></text>
+  <path class="st14" d="M167.55,314.04c-.18-.19-.36-.38-.55-.55l-.17-.14c-.09-.1-.29-.07-.41-.07h-5.6v-5.14c0-.85.17-1.55.68-2.25.53-.71,1.24-1.27,2-1.74,1.25-.77,2.8-1.04,4.26-1.05.22,0,1.09,0,2.11-.01l3.04-.02"/>
+  <path class="st14" d="M172.45,311.93c.03.05.05.1.08.15l.15.29c.06.13.13.31.24.61-.72.21-1.35.43-1.86,1.01-.48.52-.76,1.21-.76,1.92,0,.35.07.69.18,1v.05c-.23-.23-.45-.46-.68-.68l-.21-.23c-.09-.09-.18-.18-.27-.27l-.14-.15"/>
+  <path class="st14" d="M171.27,309.72l.06.08c.49-.26,1.1-.07,1.36.42.26.49.07,1.1-.42,1.36-.49.26-1.1.07-1.36-.42-.23-.43-.11-.94.25-1.24l.17-.11c-.49.26-.68.86-.42,1.36s.86.68,1.36.42l.18.35"/>
+  <path class="st14" d="M175.79,308.3c-.08,0-.15-.05-.24-.05h-1.5c-.15-.46-.4-.77-.68-.77-.29,0-.53.27-.7.7-.01.03-.02.06-.03.09h-.04c-.68.01-1.39.01-2.11,0l.15.29c.1.19.21.38.31.57l.18.33c.04.09.09.18.13.27"/>
+  <path class="st14" d="M178.45,308.29h-.16c-.13,0,.13,0,0,0h-.4c0,.55-.45,1-1,1s-1-.45-1-1l.02.2c.1.46.5.8.98.8.55,0,1-.45,1-1s-.45-1-1-1-1,.45-1,1h-.1"/>
+  <path class="st14" d="M181.45,316.07c-.36-.01-.72,0-1.08,0h-3.09c-.3-.07-.45-.2-.57-.38l-.04-.1c-.17-1.39-1.37-2.49-2.87-2.62h.01c-.24,0-.43-.2-.43-.44v-9.45c.72,0,5.55,0,6.27.01,1.46,0,3.01.27,4.26,1.05,1.45.9,2.68,2.2,2.68,3.98v7.3h-.13c-1.02-.98-5.04-5.03-6.08-5.98l-.19-.21c-.21-.19-.42-.38-.63-.57-.24-.21-.52-.32-.82-.36h-.27"/>
+  <path class="st14" d="M183.76,316.06h-.21c0,.55-.45,1-1,1s-1-.45-1-1l.02.2c.1.46.5.8.98.8.55,0,1-.45,1-1s-.45-1-1-1-1,.45-1,1h-.1"/>
+  <path class="st14" d="M169.72,324.16c.08.1.16.19.25.29l.05.06.38.43.63.72,3.35,3.74c-.46-.02-.96-.04-1.5-.04h-.39c-1.66.01-2.84.05-4.51,0-1.33-.04-2.63-.18-3.87-.73-1.24-.54-2.37-1.47-3.08-2.67-.36-.61-.38-1.33-.39-2.01,0-.77,0-1.54,0-2.31v-.23c0-.18-.04-.24.03-.41.05-.13.15-.17.27-.23.34-.16.69-.27,1.03-.44.29-.15.55-.4.79-.62.32-.29.63-.6.96-.9s.67-.6.98-.92c.15-.16.3-.34.52-.43.26-.13.55-.14.83-.13.78.01,1.57.01,2.35.01h1.78c.18,0,.32.04.49.1.13.04.18.18.26.28s.18.2.27.29c.2.18.41.34.65.47.49.27,1.06.41,1.62.41,1.31,0,2.44-.74,2.93-1.78.14-.29.23-.61.25-.95.04.32.03.65.03.97v.7c-.01.58-.02,1.17,0,1.75.03,1.08-.13,2.3-1.11,2.94-.68.44-.77,1.08-.74,1.84.03.97.03,1.94.02,2.92v1.46c0,.24-.04.34.14.5.13.11.31.2.47.22.67.1,1.34.04,2.01.03.72,0,1.44,0,2.15-.01,1.52,0,2.93-.23,4.26-1.05.59-.37,1.12-.82,1.58-1.34.33-.38.67-.77.9-1.23s.21-.92.21-1.41v-8.38h-2.8"/>
+  <path class="st14" d="M168.07,322.27l.08.07c.42-.36,1.05-.32,1.41.1s.32,1.05-.1,1.41c-.42.36-1.05.32-1.41-.1-.32-.37-.32-.9-.04-1.27l.14-.15c-.42.36-.46.99-.1,1.41s.99.46,1.41.1l.26.3"/>
+  <path class="st14" d="M160.84,320.35l.04-1.99-.02-4.61c.35.4.65.84.98,1.25l.04.03,2.13,2.49c.45-.19.84-.2,1.03,0,.19.21.15.57-.07.99-.01.03-.03.05-.04.08l.02.04,2.16,2.49h0s.27.32.27.32c.24.27.49.54.71.82"/>
+  <path class="st15" d="M169.19,315.65l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M169.05,315.51c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M172.65,311.53l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M172.51,311.4c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M177.73,309.13l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M177.59,308.99c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M183.39,316.9l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M183.25,316.76c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+  <path class="st15" d="M169.65,323.94l-.14-.14c-.39.39-1.02.39-1.41,0s-.39-1.02,0-1.41l-.13.15c-.26.39-.21.92.13,1.26.39.39,1.02.39,1.41,0"/>
+  <path class="st15" d="M169.51,323.8c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-.08-.06"/>
+</svg>
+
+            </div>
             <div class="feature-content">
                 <h2>Decentralized Traceability</h2>
                 <p>AuraZine is a deep technology company pioneering a new foundation for global trust: a decentralized molecular traceability system that fuses DNA cryptography with blockchain transparency.
@@ -3474,13 +3859,6 @@ const stroke5=1
 const stroke6=1.5
 const stroke7=1.2
 const stroke8=0.8
-
-window.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.animation-svg').forEach(svg => {
-    svg.style.opacity = 0;
-    svg.style.transform = 'none';
-  });
-});
 
 
 // --- Animation sequence ---
@@ -5549,16 +5927,6 @@ pauseBtn.addEventListener('click', () => {
 
 
 // --- 3. INITIAL SETUP ---
-window.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.animation-svg').forEach(svg => {
-        svg.style.opacity = 0;
-        svg.style.transform = 'none';
-    });
-    
-    // If you want the first frame visible before clicking play:
-    showFrame0(); 
-    typeFrame0Subtitle();
-});
 
 // --- 4. CORE HELPERS ---
 
@@ -6840,7 +7208,8 @@ function fadeOutAllText2(duration = 2000) {
   return new Promise(resolve => {
     // Select all text elements from SVGs and overlays
     const allText = document.querySelectorAll(
-      'svg text, .text-display, .stDNA, .overlay-oligo-label'
+  'svg text:not(.protected-text), .text-display, .stDNA, .overlay-oligo-label'
+
     );
 
     if (allText.length === 0) {
