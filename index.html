@@ -7180,7 +7180,8 @@ function fadeOutAllText(duration = 1000) {
   return new Promise(resolve => {
     // Select all text elements from SVGs and overlays
     const allText = document.querySelectorAll(
-      'svg text, .text-display, .stDNA, .overlay-oligo-label'
+  'svg text:not(.protected-text), .text-display, .stDNA, .overlay-oligo-label'
+
     );
 
     if (allText.length === 0) {
