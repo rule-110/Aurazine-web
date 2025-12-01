@@ -4671,39 +4671,6 @@ const stroke7=1.2
 const stroke8=0.8
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const playBtn  = document.querySelector(".play-button");
-    const pauseBtn = document.getElementById("pauseControl");
-    const sound    = document.getElementById("startSound");
-
-    let isPaused = false;
-
-    // ▶️ Start animation + sound
-    playBtn.addEventListener("click", () => {
-        sound.play().catch(e => console.log("Audio play blocked:", e));
-        playBtn.style.display = "none";
-    });
-
-    // ⏯ Pause / resume animation AND sound
-    pauseBtn.addEventListener("click", () => {
-        isPaused = !isPaused;
-
-        if (isPaused) {
-            // Pause animations
-            document.body.classList.add("is-paused");
-
-            // Pause sound but KEEP the currentTime
-            sound.pause();
-        } else {
-            // Resume animations
-            document.body.classList.remove("is-paused");
-
-            // Resume sound from where it left off
-            sound.play().catch(e => console.log("Audio resume blocked:", e));
-        }
-    });
-});
-
 
 
 
@@ -6464,27 +6431,47 @@ function prepareSVGPathsForSynchronizedDrawing(svgId, duration = 4000) {
 
 // --- Global Pause State ---
 
-const pauseBtn = document.getElementById('pauseControl');
+// --- Global Pause & Audio State ---
+const pauseBtn  = document.getElementById("pauseControl");
+const sound     = document.getElementById("startSound");
 
 let isPaused = false;
-let activeAnimations = []; // Stores the visual animation objects
+let activeAnimations = []; // Stores visual animation objects
 
 // --- 2. PAUSE CONTROL LOGIC ---
 pauseBtn.addEventListener('click', () => {
     isPaused = !isPaused;
 
-    pauseBtn.innerHTML = ""; // clear
+    pauseBtn.innerHTML = ""; // clear icon container
 
     if (isPaused) {
-        // Show play icon when paused
+        // 🔇 Pause audio when we pause the visuals
+        if (sound && !sound.paused) {
+            sound.pause();
+        }
+
         const playIcon = document.createElement("div");
         playIcon.classList.add("play-icon");
         pauseBtn.appendChild(playIcon);
+
+        // Optional: pause CSS animations too
+        document.body.classList.add("is-paused");
     } else {
-        // Show pause icon when playing
+        // 🔊 Resume audio when we resume the visuals
+        if (sound && sound.paused) {
+            const p = sound.play();
+            if (p && typeof p.catch === "function") {
+                p.catch(err => {
+                    console.warn("Could not resume audio:", err);
+                });
+            }
+        }
+
         const pauseIcon = document.createElement("div");
         pauseIcon.classList.add("pause-icon");
         pauseBtn.appendChild(pauseIcon);
+
+        document.body.classList.remove("is-paused");
     }
 });
 
@@ -8272,13 +8259,13 @@ function typeFrame0Subtitle() {
       if (done1 && done2) resolve();
     }
 
-    typeWriter(text1, "Blockchain registration technology", 50, () => {
+    typeWriter(text1, "Blockchain Registration Technology", 50, () => {
       done1 = true;
       checkDone();
     });
 
     setTimeout(() => {
-      typeWriter(text2, "for every physical object", 50, () => {
+      typeWriter(text2, "For Every Physical Object", 50, () => {
         done2 = true;
         checkDone();
       });
@@ -8371,25 +8358,24 @@ animationFrame.addEventListener('mousemove', () => {
 
 
 let skipMode = false;
-playButton.addEventListener("click", () => {
-    animationStarted = true;        // 🚀 Animation is now started
-    pauseControl.style.display = "block"; 
-    playButton.style.display = "none";
-    if(pauseBtn) pauseBtn.style.display = "block"; // Show Pause Button
 
-    // The Sequence
-    if (skipMode) {
-        // TEST MODE
-        showFrame0()
-                        .then(fadeOutFrame0)
-            .then(() => fadeOutAllText2())
-            
-            .then(() => { typereadlabel2();})
-           
-            
-            
-    } else {
-        // FULL MOVIE
+playButton.addEventListener("click", () => {
+    animationStarted = true;
+    pauseControl.style.display = "block";
+    playButton.style.display = "none";
+    if (pauseBtn) pauseBtn.style.display = "block"; // Show Pause Button
+
+    // --- Helper that runs the animation (skipMode or full movie) ---
+    function runAnimation() {
+        if (skipMode) {
+            // TEST MODE
+            return showFrame0()
+                .then(fadeOutFrame0)
+                .then(() => fadeOutAllText2())
+                .then(() => { typereadlabel2(); });
+
+        } else {
+              // FULL MOVIE
         showFrame0()
         .then(() => delay(5000))
                         .then(fadeOutFrame0)
@@ -8578,8 +8564,38 @@ playButton.addEventListener("click", () => {
             .then(runSequence21)
             .then(() => delay(2500))
             .then(runFrame97);
+        }
+    }
+
+    // No audio element → just run animation
+    if (!sound) {
+        runAnimation();
+        return;
+    }
+
+    // Reset audio
+    sound.currentTime = 0;
+
+    // 🔊 Start audio
+    const playPromise = sound.play();
+
+    // Promise-based browsers
+    if (playPromise && typeof playPromise.then === "function") {
+        playPromise
+            .then(() => {
+                runAnimation();
+            })
+            .catch(err => {
+                console.warn("Audio playback blocked, running animation anyway:", err);
+                runAnimation();
+            });
+    } else {
+        // Old browsers
+        runAnimation();
     }
 });
+
+
 </script>
 
 <script>
