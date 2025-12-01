@@ -741,6 +741,12 @@ body.is-paused * {
     </style>
 </head>
 <body>
+
+  <audio id="startSound" preload="auto">
+    <source src="https://rule-110.github.io/Aurazine-web/voice_over_v3.mp3" type="audio/mpeg">
+</audio>
+
+
     <!-- Header -->
     <header>
     
@@ -4646,12 +4652,12 @@ body.is-paused * {
 <script>
 const playButton = document.getElementById('play');
 const delay1 = 100;
-const delay2 = 100;
+const delay2 = 60;
 const delay3 = 0;
-const duration1 =3000;
+const duration1 =1000;
 const duration2 =5000;
 const duration3 =5000;
-const duration4 =4000;
+const duration4 =2000;
 const duration5 =1000;
 const duration6 =500;
 
@@ -4665,124 +4671,64 @@ const stroke7=1.2
 const stroke8=0.8
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const playBtn  = document.querySelector(".play-button");
+    const pauseBtn = document.getElementById("pauseControl");
+    const sound    = document.getElementById("startSound");
+
+    let isPaused = false;
+
+    // ▶️ Start animation + sound
+    playBtn.addEventListener("click", () => {
+        sound.play().catch(e => console.log("Audio play blocked:", e));
+        playBtn.style.display = "none";
+    });
+
+    // ⏯ Pause / resume animation AND sound
+    pauseBtn.addEventListener("click", () => {
+        isPaused = !isPaused;
+
+        if (isPaused) {
+            // Pause animations
+            document.body.classList.add("is-paused");
+
+            // Pause sound but KEEP the currentTime
+            sound.pause();
+        } else {
+            // Resume animations
+            document.body.classList.remove("is-paused");
+
+            // Resume sound from where it left off
+            sound.play().catch(e => console.log("Audio resume blocked:", e));
+        }
+    });
+});
+
+
+
+
 // --- Animation sequence ---
-
-
 const aframe1 = [
   { ids: ['frame1'], stroke: stroke1, text: 'text1', delay: 300, duration: duration1 },
 ];
 
-const aframe2 = [
-  { ids: ['frame2'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
+
+const aframeFadeIn1to29 = [
+  {
+    ids: [
+      'frame2','frame3','frame4','frame5','frame6','frame7','frame8','frame9',
+      'frame10','frame11','frame12','frame13','frame14','frame15','frame16','frame17',
+      'frame18','frame19','frame20','frame21','frame22','frame23','frame24','frame25',
+      'frame26','frame27','frame28','frame29'
+    ],
+    stroke: stroke1,        // or stroke1 if you want frame1 thicker
+    text: 'text1',
+    delay: 300,             // when the fade starts
+    duration: 2000,         // fade-in duration
+    fadeIn: true            // <---- IMPORTANT
+  }
 ];
 
-const aframe3 = [
-  { ids: ['frame3'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe4 = [
-  { ids: ['frame4'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe5 = [
-  { ids: ['frame5'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe6 = [
-  { ids: ['frame6'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe7 = [
-  { ids: ['frame7'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe8 = [
-  { ids: ['frame8'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe9 = [
-  { ids: ['frame9'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe10 = [
-  { ids: ['frame10'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe11 = [
-  { ids: ['frame11'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe12 = [
-  { ids: ['frame12'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe13 = [
-  { ids: ['frame13'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe14 = [
-  { ids: ['frame14'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe15 = [
-  { ids: ['frame15'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe16 = [
-  { ids: ['frame16'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe17 = [
-  { ids: ['frame17'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe18 = [
-  { ids: ['frame18'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe19 = [
-  { ids: ['frame19'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe20 = [
-  { ids: ['frame20'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe21 = [
-  { ids: ['frame21'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe22 = [
-  { ids: ['frame22'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe23 = [
-  { ids: ['frame23'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe24 = [
-  { ids: ['frame24'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe25 = [
-  { ids: ['frame25'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe26 = [
-  { ids: ['frame26'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe27 = [
-  { ids: ['frame27'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe28 = [
-  { ids: ['frame28'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
-
-const aframe29 = [
-  { ids: ['frame29'], stroke: stroke2, text: 'text1', delay: delay1, duration: 10 },
-];
 
 const aframe30 = [
   { ids: ['frame30'], stroke: stroke3, text: 'text1', delay: 500, duration: duration2, mode: 'fromEnd' },
@@ -5009,6 +4955,13 @@ const aframe59 = [
   { ids: ['frame59'], stroke: stroke5, text: 'text1', delay: 300, duration: duration3 },
 ];
 
+function runSequenceFadeIn1to29() {
+  return new Promise(resolve => {
+    const total = playSequence(aframeFadeIn1to29, showAndAnimate);
+     delay(total).then(resolve);
+  });
+}
+
 function runSequenceframea1() {
     return new Promise(resolve => {
         const total = playSequence(aframe1, showAndAnimate2);
@@ -5016,201 +4969,7 @@ function runSequenceframea1() {
     });
 }
 
-function runSequenceframea2() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe2, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
 
-function runSequenceframea3() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe3, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea4() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe4, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea5() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe5, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea6() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe6, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea7() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe7, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea8() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe8, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea9() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe9, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea10() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe10, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea11() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe11, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea12() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe12, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea13() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe13, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea14() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe14, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea15() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe15, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea16() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe16, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea17() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe17, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea18() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe18, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea19() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe19, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea20() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe20, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea21() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe21, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea22() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe22, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea23() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe23, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea24() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe24, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea25() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe25, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea26() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe26, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea27() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe27, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea28() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe28, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
-
-function runSequenceframea29() {
-    return new Promise(resolve => {
-        const total = playSequence(aframe29, showAndAnimate);
-        delay(total).then(resolve);  
-    });
-}
 
 function runSequenceframea30() {
     return new Promise(resolve => {
@@ -5693,9 +5452,9 @@ const sequence8c = [
     ];
     
         const sequence10 = [
-      { ids: ['frame75'], stroke: 2, text: 'text1', delay: 500, duration: 3000 },
+      { ids: ['frame75'], stroke: 2, text: 'text1', delay: 500, duration: 1500 },
       { ids: ['frame76'], stroke: 1, text: 'text1', delay: 400, duration: 1000 },
-            { ids: ['frame77'], stroke: 1, text: 'text1', delay: 10, duration: 1000 },
+            { ids: ['frame77'], stroke: 1, text: 'text1', delay: 10, duration: 800 },
     ];
     
     const sequence11 = [
@@ -5704,9 +5463,9 @@ const sequence8c = [
 
     
             const sequence12 = [
-      { ids: ['frame78'], stroke: 1, text: 'text1', delay: 300, duration: 2000 },
-      { ids: ['frame79'], stroke: 1, text: 'text1', delay: 2000, duration: 1000 },
-          { ids: ['frame80'], stroke: 1, text: 'text1', delay: 2000, duration: 2000 },
+      { ids: ['frame78'], stroke: 1, text: 'text1', delay: 300, duration: 1000 },
+      { ids: ['frame79'], stroke: 1, text: 'text1', delay: 2000, duration: 500 },
+          { ids: ['frame80'], stroke: 1, text: 'text1', delay: 2000, duration: 1000 },
     ];
   const sequence13 = [
 
@@ -5715,12 +5474,12 @@ const sequence8c = [
     
             const sequence14 = [
 
-      { ids: ['frame76'], stroke: 1, text: 'text1', delay: 100, duration: 1000 },
-            { ids: ['frame77'], stroke: 1, text: 'text1', delay: 1000, duration: 1000 },
+      { ids: ['frame76'], stroke: 1, text: 'text1', delay: 100, duration: 800 },
+            { ids: ['frame77'], stroke: 1, text: 'text1', delay: 200, duration: 300 },
            ];     
               const sequence15 = [
 
-      { ids: ['frame81'], stroke: 1, text: 'text1', delay: 400, duration: 1000 },
+      { ids: ['frame81'], stroke: 1, text: 'text1', delay: 40, duration: 1000 },
             { ids: ['frame82'], stroke: 1, text: 'text1', delay: 1000, duration: 4000, mode: 'fromEnd' },
 
 
@@ -5729,8 +5488,8 @@ const sequence8c = [
                   const sequence16 = [
                    { ids: ['frame75'], stroke: 1, text: 'text1', delay: 10, duration: 100 },
                 { ids: ['frame83c'], stroke: 1, text: 'text1', delay: 10, duration: 100 },
-            { ids: ['frame83b'], stroke: 1, text: 'text1', delay: 10, duration: 3000},
-    { ids: ['frame77'], stroke: 0, text: 'text1', delay: 200, duration: 3000, fadeOut: true},
+            { ids: ['frame83b'], stroke: 1, text: 'text1', delay: 10, duration: 1500},
+    { ids: ['frame77'], stroke: 0, text: 'text1', delay: 200, duration: 1500, fadeOut: true},
 
 
            // { ids: ['frame84'], stroke: 1, text: 'text1', delay: -1000, duration: 100},
@@ -5743,33 +5502,33 @@ const sequence8c = [
     
          const sequence16c = [
       { ids: ['frame81b'], stroke: 1, text: 'text1', delay: 50, duration: 300 },                  
-{ ids: ['frame84b'], stroke: 1, text: 'text1', delay: 500, duration: 2000,mode: 'fromEnd' },
-{ ids: ['frame84c'], stroke: 1, text: 'text1', delay: 2000, duration: 100 },
-{ ids: ['frame84b'], stroke: 0, text: 'text1', delay: 200, duration: 2000,fadeOut: true},
+{ ids: ['frame84b'], stroke: 1, text: 'text1', delay: 500, duration: 1200,mode: 'fromEnd' },
+{ ids: ['frame84c'], stroke: 1, text: 'text1', delay: 1000, duration: 100 },
+{ ids: ['frame84b'], stroke: 0, text: 'text1', delay: 200, duration: 800,fadeOut: true},
     ];
                       const sequence17 = [
 { ids: ['frame75','frame81b','frame82','frame83','frame83b','frame83c','frame84c'], stroke: 0, text: 'text1', delay: 10, duration: 300, fadeOut: true},
 //{ ids: ['frame83b','frame84'], stroke: 0, text: 'text1', delay: -1000, duration: 300, fadeOut: true},
-{ ids: ['frame85'], stroke: 1, text: 'text1', delay: -2000, duration: 5000},
+{ ids: ['frame85'], stroke: 1, text: 'text1', delay: -2000, duration: 4200},
 { ids: ['frame86'], stroke: 1, text: 'text1', delay: 2000, duration: 1000},
-{ ids: ['frame87'], stroke: 1, text: 'text1', delay: -500, duration: 2000},
+{ ids: ['frame87'], stroke: 1, text: 'text1', delay: -500, duration: 1500},
 
     ];
     
                           const sequence18 = [
-{ ids: ['frame88'], stroke: 1, text: 'text1', delay: 50, duration: 2000},       
+{ ids: ['frame88'], stroke: 1, text: 'text1', delay: 50, duration: 500},       
     ];                   
                           const sequence18b = [
 { ids: ['frame85','frame86','frame87','frame88','frame83c','frame84c'], stroke: 0, text: 'text1', delay: 10, duration: 500, fadeOut: true},
     ];                       
                               const sequence19 = [
 
-{ ids: ['frame90'], stroke: 1, text: 'text1', delay: 50, duration: 3000},
+{ ids: ['frame90'], stroke: 1, text: 'text1', delay: 50, duration: 2500},
 { ids: ['frame91a'], stroke: 1, text: 'text1', delay: 500, duration: 500}, 
 { ids: ['frame91b'], stroke: 1, text: 'text1', delay: 500, duration: 1000}, 
 { ids: ['frame92'], stroke: 1, text: 'text1', delay: 2500, duration: 1000},  
 { ids: ['frame93a'], stroke: 1, text: 'text1', delay: 500, duration: 500},
-{ ids: ['frame93b'], stroke: 1, text: 'text1', delay: 500, duration: 3000},                                                                              
+{ ids: ['frame93b'], stroke: 1, text: 'text1', delay: 500, duration: 2500},                                                                              
     ];               
     
                                   const sequence20 = [
@@ -6914,7 +6673,7 @@ function typereadlabel2() {
   text.style.fill = "white";
   svg.appendChild(text);
 
-  typeWriter(text, "DNA Key Copied from the Surface", 90);
+  typeWriter(text, "DNA Key Copied from the Surface", 20);
   return text;
 }
 
@@ -6931,7 +6690,7 @@ function typecollection() {
   text.style.fill = "white";
   svg.appendChild(text);
 
-  typeWriter(text, "DNA Key Registration onto the Collection Pad", 90);
+  typeWriter(text, "DNA Key Registration onto the Collection Pad", 20);
   return text;
 }
 
@@ -6948,7 +6707,7 @@ function typefraud1() {
   text.style.fill = "white";
   svg.appendChild(text);
 
-  typeWriter(text, "DNA Key Fraudulently Generated from a Copy", 90);
+  typeWriter(text, "DNA Key Fraudulently Generated from a Copy", 20);
   return text;
 }
 
@@ -6965,7 +6724,7 @@ function typefraud2() {
   text.style.fill = "white";
   svg.appendChild(text);
 
-  typeWriter(text, "DNA Key Fraudulently Lifted from the Surface", 90);
+  typeWriter(text, "DNA Key Fraudulently Lifted from the Surface", 20);
   return text;
 }
 
@@ -6983,7 +6742,7 @@ function typeDNA_pattern() {
   text.style.fill = "white";
   svg.appendChild(text);
 
-  typeWriter(text, "Molecular Integration of Patterned DNA", 90);
+  typeWriter(text, "Molecular Integration of Patterned DNA", 20);
                     
   return text;
 }
@@ -7000,7 +6759,7 @@ function typeDNA_pattern2() {
   text.style.fill = "white";
   svg.appendChild(text);
 
-  typeWriter(text, "into Target Materials", 90);
+  typeWriter(text, "into Target Materials", 20);
                     
   return text;
 }
@@ -7242,12 +7001,12 @@ function addOverlayLabel(textString, x, y) {
 
 
 function showentangled() {
-  const x1 = 350;
+  const x1 = 370;
 const x2 = 310;
 const x3 = 382;
 
   // First label at Y = 30%
-  addOverlayLabel("Irreversible ", x1, 380);
+  addOverlayLabel("Permanent", x1, 380);
 
   // Second label at Y = 70%
   addOverlayLabel("Private–Transaction", x2, 400);
@@ -7652,7 +7411,7 @@ function runZoom4() {
             40,
             3420,
             -8370,
-            3000,
+            1500,
             resolve
         );
     });
@@ -7666,7 +7425,7 @@ function runZoom5() {
             20,
             1740,
             -4135,
-            3000,
+            1500,
             resolve
         );
     });
@@ -7720,8 +7479,8 @@ function runDezoom3() {
       .map(id => document.getElementById(id))
       .filter(Boolean);
 
-    const duration = 2000;   // dezoom animation duration
-    const pause = 800;      // initial delay before starting
+    const duration = 1200;   // dezoom animation duration
+    const pause = 200;      // initial delay before starting
 
     // ⏱ Wait 2 seconds before dezoom begins
     setTimeout(() => {
@@ -7762,8 +7521,8 @@ function runDezoom4() {
       .map(id => document.getElementById(id))
       .filter(Boolean);
 
-    const duration = 2000;   // dezoom animation duration
-    const pause = 800;      // initial delay before starting
+    const duration = 1000;   // dezoom animation duration
+    const pause = 400;      // initial delay before starting
 
     // ⏱ Wait 2 seconds before dezoom begins
     setTimeout(() => {
@@ -8032,7 +7791,7 @@ function typeBlockchainLeftSide() {
     svg.appendChild(title);
 
     // Type "Blockchain" title first
-    typeWriter(title, "Public Blockchain", 90, () => {
+    typeWriter(title, "Public Blockchain", 30, () => {
       // After title is done, type DNA sequences
       let currentIndex = 0;
       let yPos = startY + 35; // Start below title
@@ -8099,7 +7858,7 @@ function typeoligoposleftSide() {
     svg.appendChild(title);
 
     // Type "Blockchain" title first
-    typeWriter(title, "", 90, () => {
+    typeWriter(title, "", 30, () => {
       // After title is done, type DNA sequences
       let currentIndex = 0;
       let yPos = startY + 35; // Start below title
@@ -8213,7 +7972,7 @@ function typeSequencingLabel() {
   svg.appendChild(text);
 
   // slow typing like other labels
-  typeWriter(text, "Sequencing", 90);
+  typeWriter(text, "Sequencing", 30);
 
   return text;
 }
@@ -8624,47 +8383,22 @@ playButton.addEventListener("click", () => {
         showFrame0()
                         .then(fadeOutFrame0)
             .then(() => fadeOutAllText2())
-            .then(runSequence12)
-            .then(() => { typeDNA_pattern();})
-            .then(() => delay(2700))
-            .then(() => { typeDNA_pattern2();})
+            
+            .then(() => { typereadlabel2();})
+           
             
             
     } else {
         // FULL MOVIE
         showFrame0()
+        .then(() => delay(5000))
                         .then(fadeOutFrame0)
             .then(() => fadeOutAllText2())
+            
             .then(() => runSequenceframea1())
-            .then(() => runSequenceframea2())
-.then(() => runSequenceframea3())
-.then(() => runSequenceframea4())
-.then(() => runSequenceframea5())
-.then(() => runSequenceframea6())
-.then(() => runSequenceframea7())
-.then(() => runSequenceframea8())
-.then(() => runSequenceframea9())
-.then(() => runSequenceframea10())
-.then(() => runSequenceframea11())
-.then(() => runSequenceframea12())
-.then(() => runSequenceframea13())
-.then(() => runSequenceframea14())
-.then(() => runSequenceframea15())
-.then(() => runSequenceframea16())
-.then(() => runSequenceframea17())
-.then(() => runSequenceframea18())
-.then(() => runSequenceframea19())
-.then(() => runSequenceframea20())
-.then(() => runSequenceframea21())
-.then(() => runSequenceframea22())
-.then(() => runSequenceframea23())
-.then(() => runSequenceframea24())
-.then(() => runSequenceframea25())
-.then(() => runSequenceframea26())
-.then(() => runSequenceframea27())
-.then(() => runSequenceframea28())
-.then(() => runSequenceframea29())
-.then(() => typeblockchain_info())
+            .then(() => {  runSequenceFadeIn1to29();})
+
+            .then(() => typeblockchain_info())
 .then(() => runSequenceframea30())
 
 
@@ -8721,37 +8455,45 @@ playButton.addEventListener("click", () => {
 .then(() => runSequenceframea55())
 .then(() => runSequenceframea27_out())
 .then(() => runSequenceframea56())
-.then(() => fadeOutAllText3())
+
 .then(() => runSequenceframea28_out())
 .then(() => runSequenceframea57())
 .then(() => runSequenceframea29_out())
 .then(() => runSequenceframea58())
+.then(() => delay(1000))
+.then(() => fadeOutAllText3())
+.then(() => delay(500))
 .then(() => typeblockchain_goods())
 .then(() => runSequenceframeaFadeAll1())
 
 .then(() => runSequenceframea59())
 .then(() => fadeOutAllText3())
-
+.then(() => delay(2000))
             .then(runZoom1)
+
             .then(runSequence2)
+            .then(() => delay(300))
             .then(runSequence3)
-            .then(() => delay(3000))
+            .then(() => delay(500))
             .then(() => { typesecrecy();})
-            .then(() => delay(3000))
+            .then(() => delay(1000))
             .then(() => { typesecrecy2();})
             .then(runSVG9)
-            .then(() => delay(5000))
+            .then(() => delay(3000))
             .then(() => fadeOutAllText3())
             
             .then(() => fadeOutAllText3())
             .then(runZoom2)
             .then(() => { typeblockchain_complexity();})
             .then(runSequence5)
+            .then(() => delay(3000))
             .then(runSequence6)
             .then(() => { typePersonalDNAKey(); return delay(1500); })
             .then(() => { typeTransactionDNAKey(); return delay(1500); })
+            .then(() => delay(3000))
             .then(runSequence7)
             .then(() => { showMillionsOfOligosLabels(); return delay(3000); })
+            .then(() => delay(5000))
             .then(() => { hideMillionsOfOligosLabels(); return delay(200); })
             .then(runSequence8)
             .then(() => fadeOutAllText2())
@@ -8771,46 +8513,48 @@ playButton.addEventListener("click", () => {
             .then(() => { typeHash6(); return delay(400); })
             .then(() => { Misctitle2(); return delay(100); })
             .then(runSequence9)
-            .then(() => delay(5000))
-            .then(() => { fadeOutFrames1to74(); return delay(500); })
-            .then(runSequence10)
+            .then(() => delay(7000))
+            .then(() => { fadeOutFrames1to74(); return delay(50); })
+            .then(() => delay(1000))
             .then(() => { typelabel();})
-            .then(() => delay(2000))
+            .then(runSequence10)
+            
+            .then(() => delay(1000))
             .then(() => fadeOutAllText3())
-            .then(() => delay(800))
+            .then(() => delay(30))
             .then(runZoom3)
             .then(runSequence12)
             .then(() => { typeDNA_pattern();})
-            .then(() => delay(2700))
+            .then(() => delay(700))
             .then(() => { typeDNA_pattern2();})
-            .then(() => delay(4000))
+            .then(() => delay(2000))
             .then(() => fadeOutAllText3())
             .then(runDezoom3)
             .then(runSequence13)
             .then(() => replacePath75WithBinary())
-            .then(() => delay(5000))
+            .then(() => delay(2000))
             .then(() => replaceFrame75BinaryWithPath())
-            .then(runSequence14)
             .then(() => delay(300))
             .then(() => { typereadlabel();})
-            .then(() => delay(2500))
+            .then(runSequence14)
+            .then(() => delay(2000))
             .then(() => fadeOutAllText3())
-            .then(() => delay(600))
             .then(runZoom4)
+                    
             .then(runSequence15)
-            .then(() => delay(4000))
+            .then(() => delay(2000))
             .then(() => { typereadlabel2();})
-            .then(() => delay(5000))
+            .then(() => delay(3200))
             .then(() => fadeOutAllText3())
             .then(runDezoom4)
             .then(runSequence16)
-            .then(() => delay(1000))
+            .then(() => delay(20))
             .then(runZoom5)
             .then(runSequence16c)
             .then(() => delay(1500))
             .then(() => { typecollection();})
             
-                        .then(() => delay(5000))
+                        .then(() => delay(4000))
                         .then(() => fadeOutAllText3())
                         .then(runSequence17)
             .then(() => { typeSequencingLabel(); return delay(200); })
@@ -8818,12 +8562,12 @@ playButton.addEventListener("click", () => {
             .then(() => typeBlockchainLeftSide())
             .then(() => typeoligoposrightSide())
             .then(runSequence18)
-            .then(() => delay(4000))
+            .then(() => delay(2000))
             .then(runSequence18b)
             .then(() => fadeOutAllText())
             .then(runSequence19)
             .then(() => typefraud1())
-            .then(() => delay(6000))
+            .then(() => delay(4500))
             .then(() => fadeOutAllText3())
             .then(runSequence20)
 
