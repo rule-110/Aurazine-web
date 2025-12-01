@@ -743,7 +743,7 @@ body.is-paused * {
 <body>
 
   <audio id="startSound" preload="auto">
-    <source src="https://rule-110.github.io/Aurazine-web/voice_over_v3.mp3" type="audio/mpeg">
+    <source src="https://rule-110.github.io/Aurazine-web/voice_over_v4.mp3" type="audio/mpeg">
 </audio>
 
 
@@ -8268,7 +8268,7 @@ function typeFrame0Subtitle() {
     });
 
     setTimeout(() => {
-      typeWriter(text2, "for Every Physical Object", 50, () => {
+      typeWriter(text2, "For every Physical Object", 50, () => {
         done2 = true;
         checkDone();
       });
@@ -8327,249 +8327,257 @@ animationFrame.addEventListener('mouseleave', () => {
     }
 });
 
+/************************************************************
+ *  EXECUTED SET FOR CUE TRACKING
+ ************************************************************/
+const executed = new Set();
 
+/************************************************************
+ *  AUDIO → CUE SYNC ENGINE  (FIXED)
+ ************************************************************/
+function syncToAudio() {
+  const t = startSound.currentTime;
 
+  // Debug: print audio time every frame
+  console.log("AUDIO TIME =", t.toFixed(2));
 
-let inactivityTimer = null;
+  cues.forEach((cue, index) => {
+    if (t >= cue.t && !executed.has(cue)) {
+      console.log("🔥 FIRING CUE #", index, "at t=", cue.t, cue.action);
+      executed.add(cue);
+      cue.action();
+    }
+  });
 
-// Function to hide pause button after inactivity
-function hidePauseAfterDelay() {
-    if (isPaused) return; // Do NOT hide if paused
-    pauseControl.style.display = "none";
+  requestAnimationFrame(syncToAudio);
 }
 
 
 
-// On mouse leave → hide immediately (if playing)
+
+/************************************************************
+ *   INACTIVITY / UI HANDLERS (unchanged)
+ ************************************************************/
+let inactivityTimer = null;
+
+function hidePauseAfterDelay() {
+    if (isPaused) return;
+    pauseControl.style.display = "none";
+}
+
 animationFrame.addEventListener('mouseleave', () => {
     if (!isPaused) pauseControl.style.display = "none";
 });
 
-// On mouse move → reset the inactivity timer
 animationFrame.addEventListener('mousemove', () => {
 
-    // 🚫 Do nothing if animation not started → prevents blocking play button
     if (!animationStarted) return;
-
-    if (isPaused) return; // keep visible while paused
+    if (isPaused) return;
     
     pauseControl.style.display = "block";
 
     clearTimeout(inactivityTimer);
     inactivityTimer = setTimeout(hidePauseAfterDelay, 1000);
 });
+/*****************************************************************
+ * 1. DEFINE seqBlockA FIRST
+ *****************************************************************/
+const seqBlockA = [
+  
+  runSequenceframea2_out, runSequenceframea31,
+  runSequenceframea3_out, runSequenceframea32,
+  runSequenceframea4_out, runSequenceframea33,
+  runSequenceframea5_out, runSequenceframea34,
+  runSequenceframea6_out, runSequenceframea35,
+  runSequenceframea7_out, runSequenceframea36,
+  runSequenceframea8_out, runSequenceframea37,
+  runSequenceframea9_out, runSequenceframea38,
+  runSequenceframea10_out, runSequenceframea39,
+  runSequenceframea11_out, runSequenceframea40,
+  runSequenceframea12_out, runSequenceframea41,
+  runSequenceframea13_out, runSequenceframea42,
+  runSequenceframea14_out, runSequenceframea43,
+  runSequenceframea15_out, runSequenceframea44,
+  runSequenceframea16_out, runSequenceframea45,
+  runSequenceframea17_out, runSequenceframea46,
+  runSequenceframea18_out, runSequenceframea47,
+  runSequenceframea19_out, runSequenceframea48,
+  runSequenceframea20_out, runSequenceframea49,
+  runSequenceframea21_out, runSequenceframea50,
+  runSequenceframea22_out, runSequenceframea51,
+  runSequenceframea23_out, runSequenceframea52,
+  runSequenceframea24_out, runSequenceframea53,
+  runSequenceframea25_out, runSequenceframea54,
+  runSequenceframea26_out, runSequenceframea55,
+  runSequenceframea27_out, runSequenceframea56,
+  runSequenceframea28_out, runSequenceframea57,
+  runSequenceframea29_out, runSequenceframea58
+];
 
 
+/************************************************************
+ *   CUES — FULLY REBUILT AND FIXED
+ ************************************************************/
+const cues = [
+  { t: 0, action: () => showFrame0() },        // FIXED: t=0
+  { t: 4.5, action: () => fadeOutFrame0() },
+  { t: 4.5, action: () => fadeOutAllText2() },
+
+  { t: 6, action: () => runSequenceframea1() },
+  { t: 8, action: () => runSequenceFadeIn1to29() },
+  { t: 9, action: () => typeblockchain_info()},
+  { t: 8.5, action: () => runSequenceframea30()},
+  
+];
+
+
+/************************************************************
+ *   INSERT seqBlockA STARTING AT t = 10  (FIXED SPACING)
+ ************************************************************/
+let t = 14.5;
+seqBlockA.forEach(fn => {
+  cues.push({ t, action: () => fn() });
+  t += 0.1;            // FIXED: REAL 2-SECOND SPACING
+});
+
+
+/************************************************************
+ *  ADD REMAINING CUES (start after seqBlockA end)
+ ************************************************************/
+cues.push(
+  { t: 19.5, action: () => runSequenceframeaFadeAll1() },
+  { t: 19.5, action: () => fadeOutAllText3() },
+  { t: 21, action: () => typeblockchain_goods() },
+  
+  { t: 21, action: () => runSequenceframea59() },
+  { t: 28, action: () => fadeOutAllText3() },
+
+  { t: 28.1, action: () => runZoom1() },
+  { t: 31, action: () => runSequence2() },
+
+  { t: 35, action: () => runSequence3() },
+  { t: 37, action: () => typesecrecy() },
+  { t: 39.5, action: () => typesecrecy2() },
+  { t: 40, action: () => runSVG9() },
+  { t: 48, action: () => fadeOutAllText3() },
+  { t: 48, action: () => runZoom2() },
+  { t: 50, action: () => typeblockchain_complexity() },
+  { t: 50.5, action: () => runSequence5() },
+  { t: 67, action: () => runSequence6() },
+
+  { t: 70, action: () => typePersonalDNAKey() },
+  { t: 71, action: () => typeTransactionDNAKey() },
+  { t: 77, action: () => runSequence7() },
+
+  { t: 78, action: () => showMillionsOfOligosLabels() },
+  { t: 87, action: () => hideMillionsOfOligosLabels() },
+  { t: 87, action: () => runSequence8() },
+  { t: 87, action: () => fadeOutAllText2() },
+  { t: 88, action: () => runSequence8b() },
+  { t: 91, action: () => showentangled() },
+  { t: 94, action: () => hideentangled() },
+  { t: 94, action: () => runSequence8c() },
+
+  { t: 95, action: () => typeBlockchainOverlayLabel() },
+  { t: 95, action: () => typeHashtitle() },
+  { t: 96, action: () => typeHash1() },
+  { t: 97, action: () => typeHash2() },
+  { t: 98, action: () => typeHash3() },
+  { t: 99, action: () => typeHashtitle2() },
+  { t: 100, action: () => typeHash4() },
+  { t: 101, action: () => typeHash5() },
+  { t: 102, action: () => typeHash6() },
+
+  { t: 103, action: () => Misctitle2() },
+  { t: 104, action: () => runSequence9() },
+  { t: 108, action: () => fadeOutFrames1to74() },
+
+  
+  { t: 109, action: () => runSequence10() },
+  { t: 110, action: () => typelabel() },
+  { t: 114, action: () => fadeOutAllText3() },
+
+  { t: 115, action: () => runZoom3() },
+  { t: 117, action: () => runSequence12() },
+
+  { t: 120, action: () => typeDNA_pattern() },
+  { t: 121, action: () => typeDNA_pattern2() },
+  { t: 126, action: () => fadeOutAllText3() },
+  { t: 126, action: () => runDezoom3() },
+  { t: 128, action: () => runSequence13() },
+
+  { t: 128, action: () => replacePath75WithBinary() },
+  { t: 133, action: () => replaceFrame75BinaryWithPath() },
+  { t: 135, action: () => typereadlabel() },
+
+  { t: 135.5, action: () => runSequence14() },
+  { t: 139, action: () => fadeOutAllText3() },
+  { t: 139, action: () => runZoom4() },
+
+  { t: 140, action: () => runSequence15() },
+  { t: 144, action: () => typereadlabel2() },
+  { t: 152, action: () => fadeOutAllText3() },
+
+  { t: 152, action: () => runDezoom4() },
+  { t: 154, action: () => runSequence16() },
+  { t: 158, action: () => runZoom5() },
+  { t: 160, action: () => runSequence16c() },
+  { t: 163, action: () => typecollection() },
+
+  { t: 169, action: () => fadeOutAllText3() },
+  { t: 169, action: () => runSequence17() },
+  { t: 175, action: () => typeSequencingLabel() },
+  { t: 176, action: () => typeoligoposleftSide() },
+  { t: 178, action: () => typeBlockchainLeftSide() },
+  { t: 180, action: () => typeoligoposrightSide() },
+
+  { t: 183, action: () => runSequence18() },
+  { t: 185, action: () => runSequence18b() },
+  { t: 185, action: () => fadeOutAllText() },
+
+  { t: 186, action: () => runSequence19() },
+  { t: 195, action: () => typefraud1() },
+  { t: 200, action: () => fadeOutAllText3() },
+
+  { t: 201, action: () => runSequence20() },
+  { t: 205, action: () => typefraud2() },
+  { t: 213, action: () => fadeOutAllText3() },
+
+  { t: 213, action: () => runSequence21() },
+  { t: 213.5, action: () => runFrame97() },
+);
+
+
+/************************************************************
+ *   PLAY BUTTON — START AUDIO + SYNC LOOP
+ ************************************************************/
 let skipMode = false;
+
 playButton.addEventListener("click", () => {
-    animationStarted = true;        // 🚀 Animation is now started
-    pauseControl.style.display = "block"; 
+
+    animationStarted = true;
+    pauseControl.style.display = "block";
     playButton.style.display = "none";
-    if(pauseBtn) pauseBtn.style.display = "block"; // Show Pause Button
+    if (pauseBtn) pauseBtn.style.display = "block";
 
-    // The Sequence
+    executed.clear();
+
+    startSound.currentTime = 0;
+    startSound.play();
+
+    requestAnimationFrame(syncToAudio);
+
     if (skipMode) {
-        // TEST MODE
-        showFrame0()
-                        .then(fadeOutFrame0)
-            .then(() => fadeOutAllText2())
-            
-            .then(() => { typereadlabel2();})
-           
-            
-            
+        showFrame0();
+        fadeOutFrame0();
+        fadeOutAllText2();
+        typereadlabel2();
     } else {
-        // FULL MOVIE
-        showFrame0()
-        .then(() => delay(5000))
-                        .then(fadeOutFrame0)
-            .then(() => fadeOutAllText2())
-            
-            .then(() => runSequenceframea1())
-            .then(() => {  runSequenceFadeIn1to29();})
-
-            .then(() => typeblockchain_info())
-.then(() => runSequenceframea30())
-
-
-.then(() => runSequenceframea2_out())
-.then(() => runSequenceframea31())
-.then(() => runSequenceframea3_out())
-.then(() => runSequenceframea32())
-.then(() => runSequenceframea4_out())
-.then(() => runSequenceframea33())
-.then(() => runSequenceframea5_out())
-.then(() => runSequenceframea34())
-.then(() => runSequenceframea6_out())
-.then(() => runSequenceframea35())
-.then(() => runSequenceframea7_out())
-.then(() => runSequenceframea36())
-.then(() => runSequenceframea8_out())
-.then(() => runSequenceframea37())
-.then(() => runSequenceframea9_out())
-.then(() => runSequenceframea38())
-.then(() => runSequenceframea10_out())
-.then(() => runSequenceframea39())
-.then(() => runSequenceframea11_out())
-.then(() => runSequenceframea40())
-.then(() => runSequenceframea12_out())
-.then(() => runSequenceframea41())
-.then(() => runSequenceframea13_out())
-.then(() => runSequenceframea42())
-.then(() => runSequenceframea14_out())
-.then(() => runSequenceframea43())
-.then(() => runSequenceframea15_out())
-.then(() => runSequenceframea44())
-.then(() => runSequenceframea16_out())
-.then(() => runSequenceframea45())
-
-.then(() => runSequenceframea17_out())
-.then(() => runSequenceframea46())
-.then(() => runSequenceframea18_out())
-.then(() => runSequenceframea47())
-.then(() => runSequenceframea19_out())
-.then(() => runSequenceframea48())
-.then(() => runSequenceframea20_out())
-.then(() => runSequenceframea49())
-.then(() => runSequenceframea21_out())
-.then(() => runSequenceframea50())
-.then(() => runSequenceframea22_out())
-.then(() => runSequenceframea51())
-.then(() => runSequenceframea23_out())
-.then(() => runSequenceframea52())
-.then(() => runSequenceframea24_out())
-.then(() => runSequenceframea53())
-.then(() => runSequenceframea25_out())
-.then(() => runSequenceframea54())
-.then(() => runSequenceframea26_out())
-.then(() => runSequenceframea55())
-.then(() => runSequenceframea27_out())
-.then(() => runSequenceframea56())
-
-.then(() => runSequenceframea28_out())
-.then(() => runSequenceframea57())
-.then(() => runSequenceframea29_out())
-.then(() => runSequenceframea58())
-.then(() => delay(1000))
-.then(() => fadeOutAllText3())
-.then(() => delay(500))
-.then(() => typeblockchain_goods())
-.then(() => runSequenceframeaFadeAll1())
-
-.then(() => runSequenceframea59())
-.then(() => fadeOutAllText3())
-.then(() => delay(2000))
-            .then(runZoom1)
-
-            .then(runSequence2)
-            .then(() => delay(300))
-            .then(runSequence3)
-            .then(() => delay(500))
-            .then(() => { typesecrecy();})
-            .then(() => delay(1000))
-            .then(() => { typesecrecy2();})
-            .then(runSVG9)
-            .then(() => delay(3000))
-            .then(() => fadeOutAllText3())
-            
-            .then(() => fadeOutAllText3())
-            .then(runZoom2)
-            .then(() => { typeblockchain_complexity();})
-            .then(runSequence5)
-            .then(() => delay(3000))
-            .then(runSequence6)
-            .then(() => { typePersonalDNAKey(); return delay(1500); })
-            .then(() => { typeTransactionDNAKey(); return delay(1500); })
-            .then(() => delay(3000))
-            .then(runSequence7)
-            .then(() => { showMillionsOfOligosLabels(); return delay(3000); })
-            .then(() => delay(5000))
-            .then(() => { hideMillionsOfOligosLabels(); return delay(200); })
-            .then(runSequence8)
-            .then(() => fadeOutAllText2())
-            .then(runSequence8b)
-            .then(() => { showentangled();return delay(300); })
-            .then(() => delay(4000))
-            .then(() => { hideentangled(); return delay(200); })
-            .then(runSequence8c)
-            .then(() => { typeBlockchainOverlayLabel(); return delay(500); })
-            .then(() => { typeHashtitle(); return delay(100); })
-            .then(() => { typeHash1(); return delay(400); })
-            .then(() => { typeHash2(); return delay(400); })
-            .then(() => { typeHash3(); return delay(400); })
-            .then(() => { typeHashtitle2(); return delay(100); })
-            .then(() => { typeHash4(); return delay(400); })
-            .then(() => { typeHash5(); return delay(400); })
-            .then(() => { typeHash6(); return delay(400); })
-            .then(() => { Misctitle2(); return delay(100); })
-            .then(runSequence9)
-            .then(() => delay(7000))
-            .then(() => { fadeOutFrames1to74(); return delay(50); })
-            .then(() => delay(1000))
-            .then(() => { typelabel();})
-            .then(runSequence10)
-            
-            .then(() => delay(1000))
-            .then(() => fadeOutAllText3())
-            .then(() => delay(30))
-            .then(runZoom3)
-            .then(runSequence12)
-            .then(() => { typeDNA_pattern();})
-            .then(() => delay(700))
-            .then(() => { typeDNA_pattern2();})
-            .then(() => delay(2000))
-            .then(() => fadeOutAllText3())
-            .then(runDezoom3)
-            .then(runSequence13)
-            .then(() => replacePath75WithBinary())
-            .then(() => delay(2000))
-            .then(() => replaceFrame75BinaryWithPath())
-            .then(() => delay(300))
-            .then(() => { typereadlabel();})
-            .then(runSequence14)
-            .then(() => delay(2000))
-            .then(() => fadeOutAllText3())
-            .then(runZoom4)
-                    
-            .then(runSequence15)
-            .then(() => delay(2000))
-            .then(() => { typereadlabel2();})
-            .then(() => delay(3200))
-            .then(() => fadeOutAllText3())
-            .then(runDezoom4)
-            .then(runSequence16)
-            .then(() => delay(20))
-            .then(runZoom5)
-            .then(runSequence16c)
-            .then(() => delay(1500))
-            .then(() => { typecollection();})
-            
-                        .then(() => delay(4000))
-                        .then(() => fadeOutAllText3())
-                        .then(runSequence17)
-            .then(() => { typeSequencingLabel(); return delay(200); })
-            .then(() => typeoligoposleftSide())
-            .then(() => typeBlockchainLeftSide())
-            .then(() => typeoligoposrightSide())
-            .then(runSequence18)
-            .then(() => delay(2000))
-            .then(runSequence18b)
-            .then(() => fadeOutAllText())
-            .then(runSequence19)
-            .then(() => typefraud1())
-            .then(() => delay(4500))
-            .then(() => fadeOutAllText3())
-            .then(runSequence20)
-
-            .then(() => typefraud2())
-            .then(() => delay(6000))
-            .then(() => fadeOutAllText3())
-            
-            .then(runSequence21)
-            .then(() => delay(2500))
-            .then(runFrame97);
+        console.log("Full movie started (audio-synced cues).");
     }
 });
+
+
 </script>
 
 <script>
