@@ -8270,13 +8270,13 @@ function typeFrame0Subtitle() {
       if (done1 && done2) resolve();
     }
 
-    typeWriter(text1, "Blockchain Registration Technology", 50, () => {
+    typeWriter(text1, "Blockchain registration technology", 50, () => {
       done1 = true;
       checkDone();
     });
 
     setTimeout(() => {
-      typeWriter(text2, "for every physical object", 50, () => {
+      typeWriter(text2, "For every physical object", 50, () => {
         done2 = true;
         checkDone();
       });
@@ -8585,6 +8585,29 @@ playButton.addEventListener("click", () => {
     }
 });
 
+
+
+// --- MOBILE AUTO-FADE FOR PAUSE BUTTON ---
+const pauseBtn_mobile = document.getElementById("pauseControl");
+const frame_mobile = document.querySelector(".animation-frame");
+let mobileFadeTimeout;
+
+// Detect touch device
+const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+
+if (isTouchDevice) {
+    pauseBtn_mobile.style.opacity = "0";
+
+    frame_mobile.addEventListener("touchstart", () => {
+        pauseBtn_mobile.style.opacity = "1";
+
+        clearTimeout(mobileFadeTimeout);
+
+        mobileFadeTimeout = setTimeout(() => {
+            if (!isPaused) pauseBtn_mobile.style.opacity = "0";
+        }, 2000);
+    });
+}
 
 </script>
 
