@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AuraZine</title>
   
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400&display=swap">
@@ -590,9 +590,6 @@ header.scrolled {
   border-radius: 16px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
   position: relative;
-
-  min-width: 280px;
-  min-height: 280px;
 }
 
 /* Pause Button Styling */
@@ -5879,6 +5876,12 @@ function getTransformValues(element) {
 }
 
 // --- UPDATED: Zoom Function 1 ---
+
+// Responsive zoom factor
+function zoomFactor() {
+  const frame = document.querySelector(".animation-frame");
+  return frame ? frame.clientWidth / 800 : 1;
+}
 function zoomAndTranslateSequenceSVGs(targetScale = 2, shiftX = -400, shiftY = -300, duration = 3000, onComplete) {
     const uniqueIds = new Set(sequence.flatMap(step => step.ids));
     const svgs = Array.from(uniqueIds).map(id => document.getElementById(id));
@@ -5913,8 +5916,9 @@ function zoomAndTranslateSequenceSVGs(targetScale = 2, shiftX = -400, shiftY = -
 
         // Apply changes to all SVGs
         animations.forEach(({ element, start }) => {
-            const curX = start.x + (shiftX - start.x) * eased;
-            const curY = start.y + (shiftY - start.y) * eased;
+            const f = zoomFactor();
+            const curX = start.x + ((shiftX * f) - start.x) * eased;
+                        const curY = start.y + ((shiftY * f) - start.y) * eased;
             const curScale = start.scale + (targetScale - start.scale) * eased;
             
             element.style.transform = `translate(${curX}px, ${curY}px) scale(${curScale})`;
@@ -5963,8 +5967,9 @@ function zoom2AndTranslateSpecificSVGs(ids, targetScale = 2, shiftX = 0, shiftY 
         let eased = easeInOutSine(rawProgress);
 
         animations.forEach(({ element, start }) => {
-            const curX = start.x + (shiftX - start.x) * eased;
-            const curY = start.y + (shiftY - start.y) * eased;
+            const f = zoomFactor();
+            const curX = start.x + ((shiftX * f) - start.x) * eased;
+                        const curY = start.y + ((shiftY * f) - start.y) * eased;
             const curScale = start.scale + (targetScale - start.scale) * eased;
             
             element.style.transform = `translate(${curX}px, ${curY}px) scale(${curScale})`;
@@ -8265,7 +8270,7 @@ function typeFrame0Subtitle() {
       if (done1 && done2) resolve();
     }
 
-    typeWriter(text1, "Blockchain registration technology", 50, () => {
+    typeWriter(text1, "Blockchain Registration Technology", 50, () => {
       done1 = true;
       checkDone();
     });
