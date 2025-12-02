@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>AuraZine</title>
   
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400&display=swap">
@@ -590,6 +590,9 @@ header.scrolled {
   border-radius: 16px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
   position: relative;
+
+  min-width: 280px;
+  min-height: 280px;
 }
 
 /* Pause Button Styling */
@@ -8262,13 +8265,13 @@ function typeFrame0Subtitle() {
       if (done1 && done2) resolve();
     }
 
-    typeWriter(text1, "Blockchain Registration Technology", 50, () => {
+    typeWriter(text1, "Blockchain registration technology", 50, () => {
       done1 = true;
       checkDone();
     });
 
     setTimeout(() => {
-      typeWriter(text2, "For every Physical Object", 50, () => {
+      typeWriter(text2, "for every physical object", 50, () => {
         done2 = true;
         checkDone();
       });
